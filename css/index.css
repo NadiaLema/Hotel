@@ -161,9 +161,9 @@ footer{
     display: flex;
 }
 
-.row i{
-    width: 48px;
-    height: 48px;
+.row img{
+    width: 30px;
+    height: 30px;
 }
 
 .row label{
