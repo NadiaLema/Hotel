@@ -112,6 +112,48 @@ header.abajo ul li a{
     cursor: pointer;
     text-align: center;
 }
+/*Presentacion*/
+
+.container{
+    margin: auto;
+ }
+  .section_1{
+    width: 75%;
+    margin: auto;
+    padding: 75px 0;
+  }
+  .section_1-title{
+     font-family: 'roboto', sans-serif;
+     font-size: 40px;
+     color: var(--color-texto-3);
+     font-weight: bold;
+     margin: 25px 0;
+  }
+  .us{
+     display: flex;
+  }
+  .us-text{
+     width: 60%;
+  }
+  .us-paragraph{
+    font-family: 'roboto',sans-serif;
+    font-size: 18px;
+    color: var(--color-text-4);
+    text-align: justify;
+  }
+  .paragraph-text{
+    margin: 10px 0;
+  }
+  .us-img{
+     width: 40%;
+ 
+  }
+  .img-img{
+     object-fit: cover;
+     width: 100%;
+     border-radius: 5px;
+ 
+  }
 
 /*footer*/
 footer{
