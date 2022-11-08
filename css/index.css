@@ -112,6 +112,138 @@ header.abajo ul li a{
     cursor: pointer;
     text-align: center;
 }
+/*Presentacion del Hotel*/
+.container{
+    margin: auto;
+ }
+  .section_1{
+    width: 85%;
+    margin: auto;
+    padding: 75px 0;
+  }
+  .section_1-title{
+     font-family: 'roboto', sans-serif;
+     font-size: 40px;
+     color: #73208f;
+     font-weight: bold;
+     margin: 30px 0;
+  }
+  .us{
+     display: flex;
+  }
+  .us-text{
+     width: 60%;
+     padding: 0 5% 0 0;
+  }
+  .us-paragraph{
+    font-family: 'roboto',sans-serif;
+    font-size: 18px;
+    color:  #bd8dcd;
+    text-align: justify;
+  }
+  .paragraph-text{
+    margin: 10px 0;
+  }
+  .us-img{
+     width: 25%;
+ 
+  }
+  .img-img{
+     object-fit: cover;
+     width: 100%;
+     border-radius: 10px;
+ 
+  }
+/*Habitaciones*/
+
+.container-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(15, 139, 38);
+}
+.card {
+    position: relative;
+    width: 350px;
+    height: 250px;
+    margin: 30px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: rgb(3, 35, 54);
+    padding: 15px;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: #f3f3f3;
+}
+
+.card .back h3 {
+    font-size: 30px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    letter-spacing: 1px;
+} 
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+
 
 /*footer*/
 footer{
@@ -161,9 +293,10 @@ footer{
     display: flex;
 }
 /*redes sociales*/
-.row i{
-    width: 64px;
-    height: 64px;
+
+.row img{
+    width: 30px;
+    height: 30px;
 }
 
 .row label{
