@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 /*css de cabecera*/
 header{
@@ -57,11 +58,11 @@ header.abajo ul li a{
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(/img/portadahotel.jpg);
+    background: url(../img/portadahotel.jpg);
     background-size: cover;
-    
     animation: movimiento 10s infinite linear alternate;
 }
+
 @keyframes movimiento {
     from{
         background-position: bottom left;
@@ -71,33 +72,36 @@ header.abajo ul li a{
     }
     
 }
+
+
 .capa-gradiente{
     width: 100%;
     height: 100%;
     position: absolute;
-    background: -webkit-linear-gradient(left,black,#DC71F9);
+    background: -webkit-linear-gradient(left,black,#DC71F9), url(img/portadahotel.jpg);
     opacity: 0.5;
+    
 }
 
 
 /* booking form */
 .book{
-    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url("/img/portadahotel.jpg") center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), center/cover no-repeat;
     color: #fff;
     padding: 40px 60px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 .book-form{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
-    
     padding: 0.1rem;
 }
 .form-item input{
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     height: 2.0rem;
-    padding-left:0.2rem;
+    padding-left:0.5rem;
     border-radius: 5px;
 }
 
@@ -105,12 +109,13 @@ header.abajo ul li a{
     display: flex;
 }
 .submit button{
-    font-size: 1.3rem;
-    padding-left:0.2rem 1.3rem;
+    font-size: 1.1rem;
     border-radius: 5px;
-    height: 2.0rem;
+    height: 2.5rem;
     cursor: pointer;
     text-align: center;
+    color: #fff;
+    background-color: #720796;
 }
 /*Presentacion del Hotel*/
 .container{
@@ -122,9 +127,9 @@ header.abajo ul li a{
     padding: 75px 0;
   }
   .section_1-title{
-     font-family: 'roboto', sans-serif;
+    
      font-size: 40px;
-     color: #73208f;
+     color: #720796;
      font-weight: bold;
      margin: 30px 0;
   }
@@ -138,7 +143,7 @@ header.abajo ul li a{
   .us-paragraph{
     font-family: 'roboto',sans-serif;
     font-size: 18px;
-    color:  #bd8dcd;
+    color:  #101010;
     text-align: justify;
   }
   .paragraph-text{
@@ -156,13 +161,18 @@ header.abajo ul li a{
   }
 /*Habitaciones*/
 
+.Room{
+    text-align: center;
+    color: #720796;
+}
+
 .container-card{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: rgb(15, 139, 38);
+    background-color: #fff;
 }
 .card {
     position: relative;
@@ -206,7 +216,7 @@ header.abajo ul li a{
 
 .card .back {
     transform: perspective(600px) rotateY(180deg);
-    background: rgb(3, 35, 54);
+    background: -webkit-linear-gradient(left,black,#DC71F9);
     padding: 15px;
     color: #f3f3f3;
     display: flex;
@@ -243,8 +253,21 @@ header.abajo ul li a{
 .card:hover .back {
     transform: perspective(600px) rotateY(360deg);
 }
+/*servicios*/
 
+.servicio{
+    text-align: center;
+    color: #720796;
+}
 
+.container-servicio{
+    display: flex;
+    justify-content: space-evenly;
+   padding-top: 5%;
+    padding-bottom: 10%;
+    
+
+}
 /*footer*/
 footer{
     width: 100%;
@@ -265,8 +288,9 @@ footer{
     justify-content: space-between;
 }
 
-.colum1{
-    max-width: 400px;
+.colum1 img{
+   max-width: 200px;
+   max-height: 200px;
 }
 
 .colum1 h1{
@@ -305,7 +329,7 @@ footer{
 }
 
 .colum3{
-    max-width: 400px;
+    height: 100px;
 }
 
 .colum3 h1{
