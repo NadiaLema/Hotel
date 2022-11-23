@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<form class="form form--hidden--dos" id="restaurar">
-    <link rel="stylesheet" href="login.css">
+    <link  href="estilo_login.css" rel="stylesheet">
+   
     
     <title>Crear Cuenta</title>
 </head>
@@ -33,9 +33,9 @@
                
                 <p></p>
             </div>
-            <button class="form__button" type="submit">Continuar</button>
+            <button class="form__button" type="submit">Enviar</button>
             <p class="form__text">
-                <a class="form__link" href="login.php" id="linkLogin">¿Ya tienes una cuenta? Iniciar sesión</a>
+                <a class="form__link" href=""  >¿Ya tienes una cuenta? Iniciar sesión</a>
             </p>
         </form>
     </div>

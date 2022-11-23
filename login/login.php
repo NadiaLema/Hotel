@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=<form class="form form--hidden--dos" id="restaurar">
     <link rel="stylesheet" href="login.css">
     
-    <title>Crear Cuenta</title>
+    <title>Login</title>
 </head>
 <body>
     <div class="container">
@@ -30,10 +30,10 @@
                 <a href="restaurar-contraseña.php" class="form__link">Olvidaste tu contraseña?</a>
             </p>
             <p class="form__text">
-                <a class="form__link" href="crearcuenta.php" id="linkLogin">No tienes una cuenta? Crear Cuenta</a>
+                <a class="form__link" href="vista/crearcuenta.php" id="linkLogin">No tienes una cuenta? Crear Cuenta</a>
             </p>
         </form>
     </div>
-   <script src="./login.js"></script>
+   
 </body>
 </html>
