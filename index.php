@@ -3,7 +3,7 @@
 include 'View/navbar.php';
 
 ?>
-	
+    
     <div class="contenedor-portada" >
         <div class="capa-gradiente"></div>
     </div>
@@ -47,7 +47,7 @@ include 'View/navbar.php';
                     </div>
                 </div>
                 <div class="us-img">
-                    <img src="img/presentacion.jpg" alt="" class="img-img">
+                    <img src="Includes/img/presentacion.jpg" alt="" class="img-img">
                 </div>
             </div>
         </section>
@@ -61,7 +61,7 @@ include 'View/navbar.php';
 
         <div class="card">
             <div class="face front">
-                <img src="img/img.1.jpg" alt="">
+                <img src="Includes/img/img.1.jpg" alt="">
                 <h3>SIMPLE</h3>
             </div>
             <div class="face back">
@@ -75,7 +75,7 @@ include 'View/navbar.php';
     
         <div class="card">
             <div class="face front">
-                <img src="img/img.2.jpg" alt="">
+                <img src="Includes/img/img.2.jpg" alt="">
                 <h3>DOBLE</h3>
             </div>
             <div class="face back">
@@ -89,7 +89,7 @@ include 'View/navbar.php';
     
         <div class="card">
             <div class="face front">
-                <img src="img/img.3.jpg" alt="">
+                <img src="Includes/img/img.3.jpg" alt="">
                 <h3>TRIPLE</h3>
             </div>
             <div class="face back">
@@ -103,7 +103,7 @@ include 'View/navbar.php';
     
         <div class="card">
             <div class="face front">
-                <img src="img/img4.jpg" alt="">
+                <img src="Includes/img/img4.jpg" alt="">
                 <h3>PREMIUM</h3>
             </div>
             <div class="face back">

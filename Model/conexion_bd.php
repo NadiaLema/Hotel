@@ -1,11 +1,21 @@
-<?php
 
-$conexion = mysqli_connect("Localhost","root","","hotel");
-/*
-if(conexion){
-echo 'conectado a la base de datos nadia ';
-}else{
-    echo 'error con la base de datos';
-}
-*/
+<?php
+    $contrasena = "";
+    $usuario = "root";
+    $nombre_bd = "hotel";
+    
+    try {
+        $bd = new PDO (
+            'mysql:host=localhost;
+            dbname='.$nombre_bd,
+            $usuario,
+            $contrasena,
+            array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
+        );
+    } catch (Exception $e) {
+        echo "Problema con la conexion: ".$e->getMessage();
+    }
+
+
+
 ?>

@@ -18,7 +18,7 @@
     <header>
         
 		<div class="logo">
-            <img src="../Includes/img/log-PhotoRoom.png"  class="logo"  rel="stylesheet" alt=""> 
+            <img src="Includes/img/log-PhotoRoom.png"  class="logo"  rel="stylesheet" alt=""> 
         </div>
        
 		<nav>
@@ -31,3 +31,5 @@
                 <li><a href="index.html" class="las la-user-tie" style="font-size:16px" >Iniciar Sesión</a></li>
 			</ul>
 		</nav>
+        </header>
+</body>

@@ -14,13 +14,13 @@
             <h1 class="form__title">Iniciar Sesión</h1>
           
             <div class="form-control">
-                <input type="text" id="nombreuno" class="form__input" autofocus placeholder="Nombre">
+                <input type="text" id="nombre" class="form__input" autofocus placeholder="Nombre">
                 
                 <p></p>
             </div>
             
             <div class="form-control">
-                <input id="contraseña" type="password" class="form__input" autofocus placeholder="Contraseña">
+                <input id="contrasenia" type="password" class="form__input" autofocus placeholder="Contraseña">
                
                 <p></p>
             </div>
