@@ -16,10 +16,13 @@
             <div class="form-control">
                 <input type="text" name="nombre" id="nombre" class="form__input" autofocus placeholder="Nombre">
                 
+                <p></p>
             </div>
             
             <div class="form-control">
                 <input id="password" name="password" type="password" class="form__input" autofocus placeholder="Contraseña">
+               
+                <p></p>
             </div>
             
             <button class="form__button" type="submit">Continuar</button>
@@ -28,7 +31,7 @@
                 <a href="restaurar-contraseña.php" class="form__link">Olvidaste tu contraseña?</a>
             </p>
             <p class="form__text">
-                <a class="form__link" href="vista/crearcuenta.php" id="linkLogin">No tienes una cuenta? Crear Cuenta</a>
+            No tienes una cuenta?  <a class="form__link" href="registar.php" id="linkLogin">Crear Cuenta</a>
             </p>
     </div>
    
