@@ -2,7 +2,7 @@
 <?php
     $contrasena = "";
     $usuario = "root";
-    $nombre_bd = "hotel";
+    $nombre_bd = "db_hotel";
     
     try {
         $bd = new PDO (

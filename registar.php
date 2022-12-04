@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <form action="registrarControl.php" method="POST" class="form " id="">
+        <form action="Controller/registrarControl.php" method="POST" class="form " id="">
             <h1 class="form__title">Crear Cuenta</h1>
           
             <div class="form-control">
