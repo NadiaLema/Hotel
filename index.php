@@ -1,6 +1,10 @@
 <?php
 
 include 'View/navbar.php';
+include 'Model/conexion_bd.php';
+    
+    $sentencia = $bd->query("SELECT * FROM habitacion");
+    $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ);
 
 ?>
     
@@ -53,71 +57,43 @@ include 'View/navbar.php';
         </section>
        
     </main>
+
+
+
     <h1 class="Room">Habitaciones</h1>
     <div class="container-card">
+    <?php
 
-        
+    foreach ($habitacion as $dato) {
+      
+
+    ?>
+    
+    <a class="text-success" href="habitaciones.php?idhabitacion=<?php echo $dato -> idhabitacion; ?>">
+        <div class="card" >
+            
+            <div class="face front">
+                <img src="" alt="">
+                <h3><?php echo $dato->tipo_habitacion ?></h3>
+            </div>
+            <div class="face back">
+                <h3><?php echo $dato->tipo_habitacion ?></h3>
+                <p><i class="las la-tv"></i> TV</p>
+                <p><?php echo $dato->descripcion ?></p>
+                <p><i class="las la-wifi"></i> Wifi Gratis</p>
+            </div>
+        </div>
+     </a>
+    
+       
+    
+    <?php
+    }
+    ?>
 
 
-        <div class="card">
-            <div class="face front">
-                <img src="Includes/img/img.1.jpg" alt="">
-                <h3>SIMPLE</h3>
-            </div>
-            <div class="face back">
-                <h3>Simple</h3>
-                <p><i class="las la-tv"></i> TV</p>
-                <p> Aire Acondionado</p>
-                <p>Calefacción</p>
-                <p><i class="las la-wifi"></i> Wifi Gratis</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="face front">
-                <img src="Includes/img/img.2.jpg" alt="">
-                <h3>DOBLE</h3>
-            </div>
-            <div class="face back">
-                <h3>Doble</h3>
-                <p><i class="las la-tv"></i> TV</p>
-                <p>Aire Acondionado</p>
-                <p>Calefacción</p>
-                <p><i class="las la-wifi"></i> Wifi Gratis</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="face front">
-                <img src="Includes/img/img.3.jpg" alt="">
-                <h3>TRIPLE</h3>
-            </div>
-            <div class="face back">
-                <h3>Triple</h3>
-                <p><i class="las la-tv"></i> TV</p>
-                <p>Aire Acondionado</p>
-                <p>Calefacción</p>
-                <p><i class="las la-wifi"></i> Wifi Gratis</p>
-            </div>
-        </div>
-    
-        <div class="card">
-            <div class="face front">
-                <img src="Includes/img/img4.jpg" alt="">
-                <h3>PREMIUM</h3>
-            </div>
-            <div class="face back">
-                <h3>Premium</h3>
-                <p><i class="las la-tv"></i> TV</p>
-                <p> Aire Acondionado</p>
-                <p>Calefacción</p>
-                <p>Bañera de Hidromasaje/Jacuzzi</p>
-                <p>Terraza/Solarium</p>
-                <p><i class="las la-wifi"></i> Wifi Gratis</p>
-            </div>
-        </div>
-        
     </div>
+    
      <h1 class="servicio">Servicios</h1>
       
         
