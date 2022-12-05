@@ -21,7 +21,7 @@
                 <!--imagen de habitación-->
                 '<div class="hotel-card_images">'
                     
-                  <img src="" class=""  . base64_encode($dato['img']) . alt="Hotel Image" >
+                <img src="data:<?php echo  base64_encode($dato->img);?>">
                    
                 </div>
 
