@@ -13,8 +13,8 @@
     
     <div class="container mt-5 mb-5">
     <div class="row ">
-        <div class="col-sm-8 col-md-8 col-lg-8">
-            <div class="hotel-card bg-white rounded-lg shadow  d-lg-flex¨"  >
+        <div class="col-sm-8 col-md-8 col-lg-8 ">
+            <div class=" bg-white rounded-lg shadow  d-lg-flex¨"  >
                 <?php
 
                 foreach ($habitacion as $dato) {
@@ -22,9 +22,9 @@
 
                 ?>
                 <!--imagen de habitación-->
-                <div class="img" style=" justify-content:center ;">
+                <div class="" >
                     
-                  <img class="w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
+                  <img class="rounded mx-auto d-block w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
                    
                 </div>
 

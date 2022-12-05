@@ -1,4 +1,4 @@
-<?php require_once ('../view/navbar')?>
+<?php require_once "view/navbar"?>
     <main class="app-content">
       <div class="app-title">
         <div>
@@ -59,4 +59,4 @@
         </div>
       </div>
     </main>
-    <?php require_once ('../view/parte_inferior.php')?>
+    <?php require_once "view/parte_inferior.php"?>
