@@ -24,7 +24,7 @@
                 <!--imagen de habitación-->
                 '<div class="hotel-card_images">'
                     
-                <img src="data:<?php echo  base64_encode($dato->img);?>">
+                  <img src="<?php echo  base64_encode($dato->img);?>">
                    
                 </div>
 
@@ -96,12 +96,8 @@
     
    
   </main>
-<<<<<<< HEAD
-<?php include "View/footer.php"; ?>
-=======
   
    
 
 
 <?php include "view/footer.php"; ?>
->>>>>>> 1402e32f79013196abbb007a21bd4cd402b1057d
