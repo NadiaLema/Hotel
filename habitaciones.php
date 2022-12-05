@@ -14,7 +14,7 @@
     <div class="container mt-5 mb-5">
     <div class="row ">
         <div class="col-sm-8 col-md-8 col-lg-8">
-            <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
+            <div class="hotel-card bg-white rounded-lg shadow  d-lg-flex¨"  >
                 <?php
 
                 foreach ($habitacion as $dato) {
@@ -22,9 +22,9 @@
 
                 ?>
                 <!--imagen de habitación-->
-                '<div class="hotel-card_images">'
+                <div class="img" style=" justify-content:center ;">
                     
-                  <img src="<?php echo  base64_encode($dato->img);?>">
+                  <img class="w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
                    
                 </div>
 
@@ -101,22 +101,15 @@
     
 
   </main>
+<<<<<<< HEAD
+<?php include "View/footer.php"; ?>
+=======
+  
+   
+
+
 <?php include "view/footer.php"; ?>
 
-<script>
-            $(function()
-            {
-                $("#btn_ajax").click(function(){
-                    var url = "Controller/calendarioControl.php";
-                    $.ajax({
-                        type:"POST",
-                        url: url,
-                        data: $("#form_ajax").serialize(),
-                        success: function(data)
-                        {
-                            $('#e_ingreso').html(''); 
-                            $('#e_salida').html('');         
-                            
 
                             $("#mensaje").html(data);
                         }

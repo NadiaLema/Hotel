@@ -73,13 +73,13 @@ include 'Model/conexion_bd.php';
         <div class="card" >
             
             <div class="face front">
-               <img src="data:<?php echo  base64_encode($dato->img);?>">
+                <img src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
                 <h3><?php echo $dato->tipo_habitacion ?></h3>
             </div>
             <div class="face back">
                 <h3><?php echo $dato->tipo_habitacion ?></h3>
                 <p><i class="las la-tv"></i> TV</p>
-                <p><?php echo $dato->descripcion ?></p>
+                <p><?php echo $dato->descripcion_corta ?></p>
                 <p><i class="las la-wifi"></i> Wifi Gratis</p>
             </div>
         </div>
