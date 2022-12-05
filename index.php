@@ -12,28 +12,7 @@ include 'Model/conexion_bd.php';
         <div class="capa-gradiente"></div>
     </div>
 
-    <div class = "book">
-        <form class = "book-form">
-            <div class = "form-item">
-                <label for = "checkin-date">Llegada: </label>
-                
-                <input type="text" id="fecha" name="datefilter" value="" />
-            </div>
-            
-            <div class = "form-item">
-                <label for = "rooms">Adultos: </label>
-                <input type = "number" min = "1" value = "1" id = "rooms">
-            </div>
-            <div class = "form-item">
-                <label for = "rooms">Niños: </label>
-                <input type = "number" min = "1" value = "1" id = "rooms">
-            </div>
-            
-            <div class = "submit">
-                <button>Ver Tarifa</button>
-            </div>
-        </form>
-    </div>
+   
 
     <main>
         <section class="container section_1">

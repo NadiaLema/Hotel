@@ -34,7 +34,7 @@
               <ul class="nav nav-pills flex-column">
         
         <li class="nav-item text-light">
-          <a class="nav-link" href="#">Volver al Inicio</a>
+          <a class="nav-link" href="index.php">Volver al Inicio</a>
         </li>
         
       </ul>
