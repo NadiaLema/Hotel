@@ -101,15 +101,22 @@
     
 
   </main>
-<<<<<<< HEAD
-<?php include "View/footer.php"; ?>
-=======
-  
-   
 
-
-<?php include "view/footer.php"; ?>
-
+  <script>
+            $(function()
+            {
+                $("#btn_ajax").click(function(){
+                    var url = "Controller/calendarioControl.php";
+                    $.ajax({
+                        type:"POST",
+                        url: url,
+                        data: $("#form_ajax").serialize(),
+                        success: function(data)
+                        {
+                            //para que se me borren los alertas cuando el campo cumplte las condiciones
+                            $('#e_ingreso').html('');
+                            $('#e_salida').html('');
+                           
 
                             $("#mensaje").html(data);
                         }
@@ -119,3 +126,12 @@
             });
 </script>
 
+
+  
+   
+
+
+<?php include "view/footer.php"; ?>
+
+
+                          
