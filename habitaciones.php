@@ -3,6 +3,9 @@
     $idhabitacion = $_GET['idhabitacion'];
     $sentencia = $bd->query("SELECT * FROM habitacion WHERE idhabitacion = '".$idhabitacion."'");
     $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+    $sentenciaReserva = $bd->query("SELECT * FROM reserva");
+    $reserva = $sentenciaReserva->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <main  class="d-flex align-items-stretch">
@@ -93,8 +96,12 @@
     
    
   </main>
+<<<<<<< HEAD
+<?php include "View/footer.php"; ?>
+=======
   
    
 
 
 <?php include "view/footer.php"; ?>
+>>>>>>> 1402e32f79013196abbb007a21bd4cd402b1057d
