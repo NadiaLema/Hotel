@@ -30,7 +30,7 @@
 				<li><a href="#">Habitaciones</a></li>
 				<li><a href="#">Servicios</a></li>
 				<li><a href="#">Contacto</a></li>
-                <li><a href="index.html" class="las la-user-tie" style="font-size:16px" >Iniciar Sesión</a></li>
+                
 			</ul>
 		</nav>
         </header>

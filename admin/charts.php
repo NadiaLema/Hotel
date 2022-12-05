@@ -3,8 +3,7 @@
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-pie-chart"></i> Charts</h1>
-          <p>Various type of charts for your project</p>
+          <h1><i class="fa fa-pie-chart"></i> Cliente</h1>
         </div>
         
        
@@ -14,7 +13,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-info" data-toggle="modal">Nuevo</button>    
+            <button id="btnNuevo" type="button" class="btn btn-info" data-toggle="modal">Nuevo Cliente</button>    
             </div>    
         </div>    
     </div>    
@@ -28,8 +27,7 @@
                     <thead class="text-center">
                         <tr>
                             <th>idcliente</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>                                
+                            <th>Nombre-Apellido</th>                               
                             <th>Dirección</th>  
                             <th>Provincia</th>
                             <th>Pais</th>
@@ -64,13 +62,6 @@
                     <input type="text" class="form-control" id="nombre">
                     </div>
                     </div>
-                    <div class="col-lg-6">
-                    <div class="form-group">
-                    <label for="" class="col-form-label">Apellido</label>
-                    <input type="text" class="form-control" id="apellido">
-                    </div> 
-                    </div>    
-                </div>
                 <div class="row"> 
                     <div class="col-lg-6">
                     <div class="form-group">
@@ -118,9 +109,6 @@
     </div>
 </div>  
       <!-- FIN TABLAS-->
-
-
-
 
 
  </main>

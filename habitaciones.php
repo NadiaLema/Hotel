@@ -8,12 +8,12 @@
     $reserva = $sentenciaReserva->fetchAll(PDO::FETCH_OBJ);
 ?>
 
-<main>
+<main  class="d-flex align-items-stretch">
 
     
     <div class="container mt-5 mb-5">
-    <div class="row" style="justify-content: center;">
-        <div class="col-sm-9 col-md-9 col-lg-9">
+    <div class="row ">
+        <div class="col-sm-8 col-md-8 col-lg-8">
             <div class="hotel-card bg-white rounded-lg shadow overflow-hidden d-block d-lg-flex">
                 <?php
 
@@ -21,7 +21,13 @@
                 
 
                 ?>
-               
+                <!--imagen de habitación-->
+                '<div class="hotel-card_images">'
+                    
+                  <img src="" class=""  . base64_encode($dato['img']) . alt="Hotel Image" >
+                   
+                </div>
+
                 <div class="card_info p-4">
                     <!--titulo del habitaciones-->
                     <div class="d-flex align-items-center mb-2">
@@ -30,6 +36,15 @@
 
                     <div class="d-flex justify-content-between align-items-end">
                         <div class="">
+                            <!--iconos del diseño -->
+                            <div class="amnities d-flex mb-3 p-1">
+                            <i class="las la-bath"></i>
+                            <i class="las la-wifi"></i>
+                            <i class="las la-tv"></i>
+                            <i class="las la-bed"></i>
+                            <i class="las la-concierge-bell"></i>
+                            <i class="las la-luggage-cart"></i>
+                            </div>
                             <!--descripcion-->
                             <div class="pl-0 mb-0"> 
                                 <p class="card-text"><?php echo $dato->descripcion ?></p>
@@ -39,7 +54,7 @@
                         </div>
                          <!--precio de la habitacion mas el boton -->
                          <div class="text-end">
-                                <h3><?php echo $dato->precio ?></h3>
+                                <h3>$<?php echo $dato->precio ?></h3>
                                 
                                 <button class="btn btn-primary">Reservar</button>
                             </div>
@@ -55,12 +70,38 @@
             </div>
             
         </div>
-        
+         <!--formulario de horarios-->
+         <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Dias de Estancia</span>
+        </h4>
+      
+        <form class="p-2">
+            <div class="form-group col-sm-10">
+                <label for="formGroupExampleInput">Llegada</label>
+                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+            </div>
+            <div class="form-group col-sm-10">
+                <label for="formGroupExampleInput2">Salida</label>
+                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block col-sm-10">Disponibilidad</button>
+        </form>
     </div>
     </div>
+
+    
  
 
     
    
   </main>
+<<<<<<< HEAD
 <?php include "View/footer.php"; ?>
+=======
+  
+   
+
+
+<?php include "view/footer.php"; ?>
+>>>>>>> 1402e32f79013196abbb007a21bd4cd402b1057d

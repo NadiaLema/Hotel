@@ -757,7 +757,7 @@
 		/**
 		 * Sort the table by a particular column
 		 *  @param {int} iCol the data index to sort on. Note that this will not match the
-		 *    'display index' if you have hidden data entries
+		 *    'display index' if you have hidden data 
 		 *  @dtopt API
 		 *  @deprecated Since v1.10
 		 *
