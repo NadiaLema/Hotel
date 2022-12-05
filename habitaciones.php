@@ -76,16 +76,19 @@
           <span class="text-muted">Dias de Estancia</span>
         </h4>
       
-        <form class="p-2">
+        <form class="p-2" action="Controller/calendarioControl.php" method="POST">
             <div class="form-group col-sm-10">
                 <label for="formGroupExampleInput">Llegada</label>
-                <input type="date" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                <input type="date" class="form-control" id="formGroupExampleInput" name="fecha_ingreso" placeholder="Example input">
             </div>
             <div class="form-group col-sm-10">
                 <label for="formGroupExampleInput2">Salida</label>
-                <input type="date" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
+                <input type="date" class="form-control" id="formGroupExampleInput2" name="fecha_salida" placeholder="Another input">
             </div>
-            <button type="button" class="btn btn-primary btn-lg btn-block col-sm-10">Disponibilidad</button>
+            <input type="hidden"  name="idhabitacion" value="<?php echo  $idhabitacion ?>" >
+            
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4">Disponibilidad</button>
         </form>
     </div>
     </div>
@@ -96,8 +99,11 @@
     
    
   </main>
+
+
   
    
 
 
 <?php include "view/footer.php"; ?>
+
