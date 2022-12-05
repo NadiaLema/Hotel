@@ -20,7 +20,7 @@
             <h6 class="my-0">Llegada: <span class="text-muted">$12</span></h6>
             <h6 class="my-0">Salida: <span class="text-muted">$12</span> </h6>
             <h6 class="my-0">Estancia: <span class="text-muted">$12</span></h6>
-            <h6 class="my-0">Huéspedes: <span class="text-muted">$12</span></h6>
+           
           </div>
           
         </li>
