@@ -46,10 +46,10 @@
         </div>
       </div>
       <ul class="app-menu">
-        <li><a class="app-menu__item" href="dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Administrador</span></a></li>
+        <li><a class="app-menu__item" href="./dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Administrador</span></a></li>
         
-        <li><a class="app-menu__item active" href="charts.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
+        <li><a class="app-menu__item active" href="./charts.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
         
-        <li><a class="app-menu__item" href="docs.php"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Habitaciones</span></a></li>
+        <li><a class="app-menu__item" href="./docs.php"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Habitaciones</span></a></li>
       </ul>
     </aside>
