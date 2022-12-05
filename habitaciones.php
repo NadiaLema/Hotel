@@ -55,8 +55,10 @@
                          <!--precio de la habitacion mas el boton -->
                          <div class="text-end">
                                 <h3>$<?php echo $dato->precio ?></h3>
+                                                                   
+                            
+                                <button class="btn btn-primary"><a href="resevar.php?" class="text-light">Reservar</a> </button>
                                 
-                                <button class="btn btn-primary">Reservar</button>
                             </div>
        
                     </div>
@@ -76,34 +78,51 @@
           <span class="text-muted">Dias de Estancia</span>
         </h4>
       
-        <form class="p-2" action="Controller/calendarioControl.php" method="POST">
+        <form class="p-2" action="" id="form_ajax">
+            <div id="mensaje"></div>
             <div class="form-group col-sm-10">
                 <label for="formGroupExampleInput">Llegada</label>
-                <input type="date" class="form-control" id="formGroupExampleInput" name="fecha_ingreso" placeholder="Example input">
+                <input type="date" class="form-control" name="fecha_ingreso" placeholder="Example input">
+                <div style="font-size: 12px;" id="e_ingreso" class="text-danger"></div>
+                
             </div>
             <div class="form-group col-sm-10">
                 <label for="formGroupExampleInput2">Salida</label>
-                <input type="date" class="form-control" id="formGroupExampleInput2" name="fecha_salida" placeholder="Another input">
+                <input type="date" class="form-control" id="fecha_salida" name="fecha_salida" placeholder="Another input">
+                <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
+                
             </div>
             <input type="hidden"  name="idhabitacion" value="<?php echo  $idhabitacion ?>" >
-            
-            
-            <button type="submit" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4">Disponibilidad</button>
+            <input type="hidden" name="ajax">     
+            <input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Disponibilidad"></input>
         </form>
     </div>
     </div>
-
     
- 
 
-    
-   
   </main>
-
-
-  
-   
-
-
 <?php include "view/footer.php"; ?>
+
+<script>
+            $(function()
+            {
+                $("#btn_ajax").click(function(){
+                    var url = "Controller/calendarioControl.php";
+                    $.ajax({
+                        type:"POST",
+                        url: url,
+                        data: $("#form_ajax").serialize(),
+                        success: function(data)
+                        {
+                            $('#e_ingreso').html(''); 
+                            $('#e_salida').html('');         
+                            
+
+                            $("#mensaje").html(data);
+                        }
+
+                    });
+                });
+            });
+</script>
 

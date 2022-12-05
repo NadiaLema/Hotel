@@ -11,6 +11,7 @@
         $dirreccion = $_POST['dirreccion'];
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
+        
 
         if ($nombre == "") {
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
