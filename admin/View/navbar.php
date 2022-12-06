@@ -3,14 +3,14 @@
   <head>
     <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
     
-    <title>Client - Vali Admin</title>
+    <title>Admin</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="licencia/css/main.css">
-    <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- icons8 -->
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
      
     <!--datables CSS básico-->
     <link rel="stylesheet" type="text/css" href="licencia/datatables/datatables.min.css"/>
@@ -23,15 +23,15 @@
   <body class="app sidebar-mini">
     <!-- Navbar-->
     <header class="app-header"><a class="app-header__logo" href="">Hotel Mendoza</a>
-      <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+      <!-- Sidebar toggle button--><a class="las la-bars" style="font-size:34px;" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
         
         <!-- Menú de usuario-->
-        <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i> Juan Pérez</a>
+        <li class="dropdown"><a class="app-nav__item " href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="lar la-user-circle" style="font-size:20px;"></i><span class="ml-1 mt-1 text-right ">Pepito</span></a>
           
           <ul class="dropdown-menu settings-menu dropdown-menu-right">
-            <li><a class="dropdown-item" href="page-login.html"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
+            <li><a class="dropdown-item" href="page-login.html"><i class="las la-power-off" style="font-size:20px;"></i> Salir</a></li> 
           </ul>
         </li>
       </ul>
@@ -39,17 +39,14 @@
     <!-- Menú de la barra lateral-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
-        <div>
-          <p class="app-sidebar__user-name">John Doe</p>
-          <p class="app-sidebar__user-designation">Frontend Developer</p>
-        </div>
-      </div>
+      
       <ul class="app-menu">
-        <li><a class="app-menu__item" href="./dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Administrador</span></a></li>
+        <li><a class="app-menu__item " href="./index.php"><i class="las la-tachometer-alt" style="font-size:34px;"></i><span class="app-menu__label ml-1">Vista General</span></a></li>
         
-        <li><a class="app-menu__item active" href="./charts.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Cliente</span></a></li>
+        <li><a class="app-menu__item active " href="./cliente.php"><i class="lar la-address-book"style="font-size:34px;" ></i><span class="app-menu__label ml-1">Cliente</span></a></li>
         
-        <li><a class="app-menu__item" href="./docs.php"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Habitaciones</span></a></li>
+        <li><a class="app-menu__item " href="./habitacion.php"><i class="las la-bed" style="font-size:34px" ></i><span class="app-menu__label ml-1">Habitaciones</span></a></li>
+
+        <li><a class="app-menu__item " href="./reserva.php"><i class="las la-paste" style="font-size:34px;" ></i><span class="app-menu__label ml-1">Reservas</span></a></li>
       </ul>
     </aside>
