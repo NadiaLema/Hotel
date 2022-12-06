@@ -8,8 +8,8 @@
           $sentenciaReserva = $bd->query("SELECT * FROM reserva WHERE idreserva = '".$idreserva."'");
           $datosReserva = $sentenciaReserva->fetchAll(PDO::FETCH_OBJ);
 
-      } else {
-        # code...
+
+
       }
     
 
@@ -32,7 +32,8 @@
                         foreach($datosReserva as $dato){
 
                           $idhabitacion = $dato ->habitacion_idhabitacion;
-
+                          $fecha_ingreso = $dato-> fecha_ingreso;
+                          $fecha_salida = $dato-> fecha_salida;
                         ?>
                         <h6 class="my-0">Llegada: <span class="text-muted"><?php echo $dato-> fecha_ingreso ?></span></h6>
                         <h6 class="my-0">Salida: <span class="text-muted"><?php echo $dato-> fecha_salida ?></span></h6>
@@ -70,8 +71,29 @@
                 
 
                 <li class="list-group-item d-flex justify-content-between">
-                    <span>Total: </span>
-                    <strong>$20</strong>
+                    <span>Total días: </span>
+                    <strong>
+                      <?php
+
+                          $costo = $bd->query("SELECT timestampdiff(DAY,'".$fecha_ingreso."','".$fecha_salida."') FROM reserva WHERE idreserva = '".$idreserva."'");
+                          $datoCosto = $costo ->fetch();
+                          $arrayCosto = array_unique($datoCosto);
+                          $datoCostoConver = implode($arrayCosto);
+
+
+
+                          echo $datoCostoConver;
+                      ?>
+                    </strong>
+                </li>
+
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Total precio: </span>
+                    <strong>
+                      <?php
+
+                      ?>
+                    </strong>
                 </li>
             </ul>
 
