@@ -17,7 +17,8 @@
     <!--datables estilo bootstrap 4 CSS-->  
     
     <link rel="stylesheet" type="text/css" href="licencia/datatables//DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
-    
+    <!-- tablas CSS-->
+    <link rel="stylesheet" href="licencia/css/tablas.css">
   
   </head>
   <body class="app sidebar-mini">
