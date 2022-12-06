@@ -43,10 +43,11 @@
       <ul class="app-menu">
         <li><a class="app-menu__item " href="./index.php"><i class="las la-tachometer-alt" style="font-size:34px;"></i><span class="app-menu__label ml-1">Vista General</span></a></li>
         
-        <li><a class="app-menu__item active " href="./cliente.php"><i class="lar la-address-book"style="font-size:34px;" ></i><span class="app-menu__label ml-1">Cliente</span></a></li>
-        
         <li><a class="app-menu__item " href="./habitacion.php"><i class="las la-bed" style="font-size:34px" ></i><span class="app-menu__label ml-1">Habitaciones</span></a></li>
 
         <li><a class="app-menu__item " href="./reserva.php"><i class="las la-paste" style="font-size:34px;" ></i><span class="app-menu__label ml-1">Reservas</span></a></li>
+        
+        <li><a class="app-menu__item active " href="./cliente.php"><i class="lar la-address-book"style="font-size:34px;" ></i><span class="app-menu__label ml-1">Clientes</span></a></li>
+      
       </ul>
     </aside>
