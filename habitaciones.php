@@ -54,10 +54,7 @@
                          <!--precio de la habitacion mas el boton -->
                          <div class="text-end">
                                 <h3>$<?php echo $dato->precio ?></h3>
-                                                                   
-                            
-                                <button class="btn btn-primary"><a href="resevar.php?" class="text-light">Reservar</a> </button>
-                                
+                                                                                                
                             </div>
        
                     </div>
@@ -93,7 +90,7 @@
             </div>
             <input type="hidden"  name="idhabitacion" value="<?php echo  $idhabitacion ?>" >
             <input type="hidden" name="ajax">     
-            <input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Disponibilidad"></input>
+            <input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input>
         </form>
     </div>
     </div>

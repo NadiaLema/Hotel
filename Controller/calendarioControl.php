@@ -4,7 +4,8 @@
 
 include "../Model/conexion_bd.php";
 $mensaje = null;
-
+$resultado = null;
+$idreserva = null;
 
 
 $fecha_ingreso = $_POST['fecha_ingreso'];
@@ -30,9 +31,27 @@ if ($fecha_ingreso == "") {
 }else if ($fecha_salida == "") {
     $mensaje = "<script>document.getElementById('e_salida').innerHTML='Ingrese fecha.';</script>";
 
-} else {
-    $mensaje = "<script>document.getElementById('resrevar').innerHTML='Ingrese fecha.';</script>";
+}else{
+  
+
+    $sentencia = $bd->prepare("INSERT INTO reserva(fecha_ingreso,fecha_salida,habitacion_idhabitacion) VALUES (?,?,?);");
+    $resultado= $sentencia->execute([$fecha_ingreso,$fecha_salida,$idhabitacion]);
+    
+    $idreserva = $bd->lastInsertId();
+
+    
+        
+    
+    
 }
+
+
+if ($resultado) {
+    //$mensaje = "<script>window.location='resevar.php?fecha_ingreso=".$fecha_ingreso."&fecha_salida=".$fecha_salida."&idhabitacion=".$idhabitacion."';</script>"; // averiguar mandar datos por url en java script
+    $mensaje = "<script>window.location='resevar.php?idreserva=".$idreserva."';</script>";
+}
+//echo $idreserva;
+//echo $resultado;
 // var_dump($resultadoFI);
 echo $mensaje;
 

@@ -22,7 +22,7 @@
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";
     
-        }else if (!preg_match('/[0-9]{9}$/',$telefono)) {
+        }else if (!preg_match('/[0-9]{9}$/',$telefono) || !preg_match('/^\d{10}$/',$telefono)) {
             $mensaje = "<script>document.getElementById('e_telefono').innerHTML='Télefono inválido!';</script>";
         
         }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -55,6 +55,9 @@
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$pais)){
             $mensaje = "<script>document.getElementById('e_pais').innerHTML='Solo se permiten letras!';</script>";
     
+        }else{
+
+           
         }
     }
 
