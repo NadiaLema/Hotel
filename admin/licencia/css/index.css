@@ -1,0 +1,109 @@
+body {
+    background: #f1f1f1;
+}
+
+.barra {
+    background: #957DAD;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+}
+
+.dropdown-menu {
+    margin: 10px;
+    background: #262a34;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.menuperfil {
+    color: white;
+}
+
+.menuperfil:focus {
+    background: #23ae6b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.cerrar:hover {
+    background-color: #957DAD;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.568);
+}
+
+.user {
+    font-size: 35px;
+}
+
+
+/*BARRA LATERAL*/
+
+.barra-lateral {
+    background: #222d32;
+    color: #fff;
+    min-width: 250px;
+    min-height: 100vh;
+    
+}
+
+.barra-lateral a {
+    color: #fff;
+    
+}
+
+
+/*ESTILOS MENU*/
+
+.barra-lateral .app-menu a {
+    display: block;
+    padding: 20px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.barra-lateral .app-menu a:hover {
+    background-color: #050e13;
+    text-decoration: none;
+}
+
+.active {
+    background: #050e13;
+}
+
+
+
+
+
+.app-menu{
+    list-style: none;
+
+}
+.app-menu  a i{
+    margin-right:5px; 
+    align-items: stretch;
+   
+}
+
+
+/*MAIN*/
+
+.main {
+    padding-top: 0px;
+}
+
+.main .columna {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/*app title*/
+.app-title{
+    background: #fff;
+    
+    height: 10%;
+    text-align: center;
+    font-size: 10px
+    
+    
+  
+}
