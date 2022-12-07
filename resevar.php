@@ -1,12 +1,14 @@
 <?php
-  if (isset($_GET['idreserva'])) {
+  if (isset($_GET['idhabitacion'])) {
         
           include "view/nav2.php";
           include "Model/conexion_bd.php";
 
-          $idreserva = $_GET['idreserva'];
-          $sentenciaReserva = $bd->query("SELECT * FROM reserva WHERE idreserva = '".$idreserva."'");
-          $datosReserva = $sentenciaReserva->fetchAll(PDO::FETCH_OBJ);
+          $idhabitacion = $_GET['idhabitacion'];
+          $sentenciaHabitacion = $bd->query("SELECT * FROM habitacion WHERE idhabitacion = '".$idhabitacion."'");
+          $datosHabitacion = $sentenciaHabitacion->fetchAll(PDO::FETCH_OBJ);
+
+
 
 
 
@@ -25,28 +27,7 @@
 
             </h4>
             <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-condensed">
-                    <div>
-                        <?php
-
-                        foreach($datosReserva as $dato){
-
-                          $idhabitacion = $dato ->habitacion_idhabitacion;
-                          $fecha_ingreso = $dato-> fecha_ingreso;
-                          $fecha_salida = $dato-> fecha_salida;
-                        ?>
-                        <h6 class="my-0">Llegada: <span class="text-muted"><?php echo $dato-> fecha_ingreso ?></span></h6>
-                        <h6 class="my-0">Salida: <span class="text-muted"><?php echo $dato-> fecha_salida ?></span></h6>
-                        
-                        <?php
-
-                        }
-
-                        ?>
-
-                    </div>
-
-                </li>
+                
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">Habitación</h6>
@@ -68,40 +49,37 @@
 
                     </div>
                 </li>
-                
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total días: </span>
-                    <strong>
-                      <?php
-
-                          $costo = $bd->query("SELECT timestampdiff(DAY,'".$fecha_ingreso."','".$fecha_salida."') FROM reserva WHERE idreserva = '".$idreserva."'");
-                          $datoCosto = $costo ->fetch();
-                          $arrayCosto = array_unique($datoCosto);
-                          $datoCostoConver = implode($arrayCosto);
-
-
-
-                          echo $datoCostoConver;
-                      ?>
-                    </strong>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>Total precio: </span>
-                    <strong>
-                      <?php
-
-                      ?>
-                    </strong>
-                </li>
             </ul>
 
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">DATOS PERSONALES</h4>
             <div id="mensaje"></div>
-            <form class="needs-validation" id="form_ajax" method="POST">
+            <form action="" id="form_ajaxF" method="post">
+             <div class="row bg-light bg-gradient ">
+                <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
+                    <div class="col-md-6 mb-3">
+                        <label>Fecha llegada</label>
+                        <input type="date" class="form-control text-secondary" name="fecha_ingreso" >
+                        <div style="font-size: 12px;" id="e_ingreso" class="text-danger"></div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label>Fecha salida</label>
+                        <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida" placeholder="Another input">
+                        <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
+                    </div>
+                    <div class="mb-3">
+                    <input type="hidden" name="ajaxF">
+                    <input type="hidden" name="idhabitacion" value="<?php echo $idhabitacion ?>">
+                    <input type="button" id="btn_ajaxF" class="btn btn-dark center-block col-sm-5 mt-2 mb-1" name="consultar" value="Consultar disponibilidad"></input>
+                    </div>                   
+                </div>
+
+            </form>
+
+            <form class="needs-validation mb-5" id="form_ajax" method="POST">
+                                      
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Nombre y Apellido</label>
@@ -139,10 +117,13 @@
                     <div style="font-size: 12px;" id="e_pais" class="text-danger"></div>
                 </div>
                 <hr class="mb-2 mt-5">
+                
                 <input type="hidden" name="ajax">
-                <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" type="button"
+                <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" name="final" type="button"
                     value="Finalizar Reserva"></input>
                 </hr>
+
+            </form>
         </div>
 
         <script>
@@ -155,6 +136,8 @@
                     data: $("#form_ajax").serialize(),
                     success: function(data) {
                         //para que se me borren los alertas cuando el campo cumplte las condiciones
+                        $('#e_ingreso').html('');
+                        $('#e_salida').html('');
                         $('#e_nombre').html('');
                         $('#e_telefono').html('');
                         $('#e_email').html('');
@@ -169,3 +152,31 @@
             });
         });
         </script>
+
+<script>
+        $(function() {
+            $("#btn_ajaxF").click(function() {
+                var url = "Controller/reservarControl.php";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#form_ajaxF").serialize(),
+                    success: function(data) {
+                        //para que se me borren los alertas cuando el campo cumplte las condiciones
+                        $('#e_ingreso').html('');
+                        $('#e_salida').html('');
+                        
+
+                        $("#mensaje").html(data);
+                    }
+
+                });
+            });
+        });
+        </script>
+
+<script>
+
+    // calcular costo
+
+</script>
