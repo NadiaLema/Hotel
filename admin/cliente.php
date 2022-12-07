@@ -1,4 +1,8 @@
-<?php include "View/navbar.php"?>
+<?php 
+include "View/navbar.php";
+include "./Model/conexion.php";
+
+?>
     
 <div class="app-title" >
     <div>
@@ -12,6 +16,9 @@
     <br>  
 
     <div class="container caja">
+         <?php
+        foreach ($cliente as $dato) {
+         ?>
         <div class="row">
             <div class="col-lg-12">
             <div class="table-responsive">        
