@@ -21,29 +21,33 @@
             <div class="col-lg-12">
             <div class="table-responsive">        
                 <table id="tablacliente" class="table table-striped table-bordered table-condensed" style="width:100%" >
-                    <thead class="text-center">
-                        <tr>
-                            <th>id</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>                                
-                            <th>Precio</th>  
-                            <th>Imagen</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>  
-                        <th>m</th>
-                        <th>d</th>
-                        <th>s</th>
-                        <th>p</th>
-                        <th>s</th>
-                        <th>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                                <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
-                            </div>   
-                        </th>                      
-                    </tbody>        
+                                
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <th>las</th>
+                    <th>
+                        <a class="btn btn-primary btn-sm" href="">Editar</a>
+                        <a class="btn btn-danger btn-sm" href="">Eliminar</a>
+
+                    </th>
+                    </tr>
+                    
+                </tbody>
+
                 </table>               
             </div>
             </div>
