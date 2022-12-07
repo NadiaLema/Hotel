@@ -17,7 +17,7 @@ include "./Model/conexion.php";
 
     <div class="container caja">
          <?php
-        foreach ($cliente as $dato) {
+        foreach ($cliente as $dato) 
          ?>
         <div class="row">
             <div class="col-lg-12">
@@ -56,9 +56,4 @@ include "./Model/conexion.php";
         </div>  
     </div>   
 
-      
-
-<?php include "View/parte_inferior.php"?>
-     
-
-
+<?php  include "View/navbar.php;" ?>
