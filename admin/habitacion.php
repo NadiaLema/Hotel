@@ -23,18 +23,26 @@
                 <table id="tablacliente" class="table table-striped table-bordered table-condensed" style="width:100%" >
                     <thead class="text-center">
                         <tr>
-                            <th>idHabitaci</th>
+                            <th>id</th>
                             <th>Nombre</th>
-                            <th>Apellido</th>                                
-                            <th>Dirección</th>  
-                            <th>Provincia</th>
-                            <th>Pais</th>
-                            <th>Telefono</th>
-                            <th>E-mail</th>
+                            <th>Descripción</th>                                
+                            <th>Precio</th>  
+                            <th>Imagen</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>                           
+                    <tbody>  
+                        <th>m</th>
+                        <th>d</th>
+                        <th>s</th>
+                        <th>p</th>
+                        <th>s</th>
+                        <th>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
+                            </div>   
+                        </th>                      
                     </tbody>        
                 </table>               
             </div>

@@ -18,8 +18,8 @@
     <script src="licencia/popper/popper.min.js"></script>
     <script src="licencia/bootstrap/js/bootstrap.min.js"></script>
       
-    <!-- datatables JS -->
-    <script type="text/javascript" src="licencia/datatables/datatables.min.js"></script>    
+   
+
      
    
     

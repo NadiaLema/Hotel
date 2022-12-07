@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
        <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="licencia/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./licencia/bootstrap/css/bootstrap.min.css">
     
     <link rel="stylesheet" href="./licencia/css/index.css">
     <!-- icons8 -->
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-    <!--datables estilo bootstrap 4 CSS-->  
     
-    <link rel="stylesheet" type="text/css" href="licencia/datatables//DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
-
+   
+   
+    <!--datatables  CSS personalizado --> 
+    <link rel="stylesheet" href="./licencia/css/tablas.css">
 </head>
 
 <body>
