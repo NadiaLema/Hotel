@@ -39,19 +39,21 @@ $cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($cliente as $dato) 
+                        foreach ($cliente as $dato) {
                     ?>
                     <tr>
-                    <th scope="row"><?php echo $dato->idcliente?></th>
-                    <td><?php echo $dato->nombre_completo?></td>
-                    <td><?php echo $dato->direccion?></td>
-                    <td><?php echo $dato->provincia?></td>
-                    <th><?php echo $dato->pais?></th>
-                    <td><?php echo $dato->telefono?></td>
-                    <td><?php echo $dato->email?></td>
+                    <th scope="row"><?php echo $dato->idcliente ?></th>
+                    <td><?php echo $dato->nombre_completo ?></td>
+                    <td><?php echo $dato->direccion ?></td>
+                    <td><?php echo $dato->provincia ?></td>
+                    <th><?php echo $dato->pais ?></th>
+                    <td><?php echo $dato->telefono ?></td>
+                    <td><?php echo $dato->email ?></td>
                     
                     </tr>
-                    
+                    <?php
+                        }
+                    ?>
                 </tbody>
 
                 </table>               
