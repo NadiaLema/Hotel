@@ -1,5 +1,5 @@
 
-    <footer> 
+    <footer id="contacto"> 
         <div class="container-footer-all">
             
             <div class="container-body">

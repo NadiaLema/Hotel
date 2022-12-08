@@ -15,7 +15,7 @@ include 'Model/conexion_bd.php';
    
 
     <main>
-        <section class="container section_1">
+        <section class="container section_1" id="nosotros">
           <h3. class="section_1-title">"HOTEL MENDOZA"</h3>
             <div class="us">
                 <div class="us-text">
@@ -39,7 +39,7 @@ include 'Model/conexion_bd.php';
 
 
 
-    <h1 class="Room">Habitaciones</h1>
+    <h1 class="Room" id="habitaciones">Habitaciones</h1>
     <div class="container-card">
     <?php
 
@@ -73,7 +73,7 @@ include 'Model/conexion_bd.php';
 
     </div>
     
-     <h1 class="servicio">Servicios</h1>
+     <h1 class="servicio" id="servicio">Servicios</h1>
       
         
         <div class="container-servicio">
