@@ -1,4 +1,4 @@
-<?php include "View/navbar.php"?>
+<?php include "./View/navbar.php"?>
 
         <div class="app-title">
             <div>
@@ -56,4 +56,4 @@
    
 
 
-<?php include "View/parte_inferior.php"?>
+<?php include "./View/parte_inferior.php"?>
