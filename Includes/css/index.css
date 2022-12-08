@@ -259,16 +259,16 @@ header.abajo ul li a{
 .servicio{
     text-align: center;
     color: #720796;
+   
 }
 
 .container-servicio{
     display: flex;
     justify-content: space-evenly;
-   padding-top: 5%;
+    padding-top: 5%;
     padding-bottom: 10%;
-    
-
 }
+
 /*footer*/
 footer{
     width: 100%;

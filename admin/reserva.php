@@ -1,4 +1,4 @@
-<?php include "View/navbar.php"?>
+<?php include "./View/navbar.php"?>
 
         <div class="app-title">
             <div>
@@ -17,7 +17,7 @@
                     <tr>
                     <th scope="col">#id</th>
                     <th scope="col">Cliente</th>
-                    <th scope="col">fecha de Llegada</th>
+                    <th scope="col">Fecha de Llegada</th>
                     <th scope="col">Fecha de Salida</th>
                     <th scope="col">Habitación</th>
                     <th scope="col">Acciones</th>
@@ -56,4 +56,4 @@
    
 
 
-<?php include "View/parte_inferior.php"?>
+<?php include "./View/parte_inferior.php"?>

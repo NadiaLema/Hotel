@@ -1,4 +1,11 @@
-<?php include "View/navbar.php"?>
+<?php 
+include "./View/navbar.php";
+include "./Model/conexion.php";
+
+$sentencia = $bd->query("SELECT * FROM cliente");
+$cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
+
+?>
     
 <div class="app-title" >
     <div>
@@ -12,6 +19,9 @@
     <br>  
 
     <div class="container caja">
+         <?php
+        foreach ($cliente as $dato) 
+         ?>
         <div class="row">
             <div class="col-lg-12">
             <div class="table-responsive">        
@@ -31,13 +41,13 @@
                 </thead>
                 <tbody>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <th>las</th>
-                    <td>la</td>
-                    <td>ññ</td>
+                    <th scope="row"><?php echo $dato->idcliente?></th>
+                    <td><?php echo $dato->nombre_completo?></td>
+                    <td><?php echo $dato->direccion?></td>
+                    <td><?php echo $dato->provincia?></td>
+                    <th><?php echo $dato->pais?></th>
+                    <td><?php echo $dato->telefono?></td>
+                    <td><?php echo $dato->email?></td>
                     
                     </tr>
                     
@@ -49,9 +59,4 @@
         </div>  
     </div>   
 
-      
-
-<?php include "View/parte_inferior.php"?>
-     
-
-
+<?php  include "./View/navbar.php;" ?>
