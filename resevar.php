@@ -56,7 +56,7 @@
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">DATOS PERSONALES</h4>
             <div id="mensaje"></div>
-            <form action="" id="form_ajaxF" method="post">
+            <form action="" id="form_ajax" method="post">
              <div class="row bg-light bg-gradient ">
                 <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
                     <div class="col-md-6 mb-3">
@@ -69,16 +69,12 @@
                         <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida" placeholder="Another input">
                         <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
                     </div>
-                    <div class="mb-3">
-                    <input type="hidden" name="ajaxF">
-                    <input type="hidden" name="idhabitacion" value="<?php echo $idhabitacion ?>">
+                    <!--
+                    <div class="mb-3">                   
                     <input type="button" id="btn_ajaxF" class="btn btn-dark center-block col-sm-5 mt-2 mb-1" name="consultar" value="Consultar disponibilidad"></input>
-                    </div>                   
+                    </div>   
+                        -->                
                 </div>
-
-            </form>
-
-            <form class="needs-validation mb-5" id="form_ajax" method="POST">
                                       
                 <div class="row">
                     <div class="col-md-6 mb-3">
@@ -117,7 +113,7 @@
                     <div style="font-size: 12px;" id="e_pais" class="text-danger"></div>
                 </div>
                 <hr class="mb-2 mt-5">
-                
+                <input type="hidden" name="idhabitacion" value="<?php echo $idhabitacion ?>">
                 <input type="hidden" name="ajax">
                 <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" name="final" type="button"
                     value="Finalizar Reserva"></input>
@@ -138,6 +134,8 @@
                         //para que se me borren los alertas cuando el campo cumplte las condiciones
                         $('#e_ingreso').html('');
                         $('#e_salida').html('');
+                        $('#e_ingreso').html('');
+                        $('#e_salida').html('');
                         $('#e_nombre').html('');
                         $('#e_telefono').html('');
                         $('#e_email').html('');
@@ -153,30 +151,4 @@
         });
         </script>
 
-<script>
-        $(function() {
-            $("#btn_ajaxF").click(function() {
-                var url = "Controller/reservarControl.php";
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: $("#form_ajaxF").serialize(),
-                    success: function(data) {
-                        //para que se me borren los alertas cuando el campo cumplte las condiciones
-                        $('#e_ingreso').html('');
-                        $('#e_salida').html('');
-                        
 
-                        $("#mensaje").html(data);
-                    }
-
-                });
-            });
-        });
-        </script>
-
-<script>
-
-    // calcular costo
-
-</script>
