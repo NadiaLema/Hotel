@@ -73,25 +73,9 @@
         <h4 class="d-flex justify-content-between align-items-center mb-3">
           <span class="text-muted">Dias de Estancia</span>
         </h4>
-      
-        <form class="p-2" action="" id="form_ajax">
-            <div id="mensaje"></div>
-            <div class="form-group col-sm-10">
-                <label for="formGroupExampleInput">Llegada</label>
-                <input type="date" class="form-control" name="fecha_ingreso" placeholder="Example input">
-                <div style="font-size: 12px;" id="e_ingreso" class="text-danger"></div>
-                
-            </div>
-            <div class="form-group col-sm-10">
-                <label for="formGroupExampleInput2">Salida</label>
-                <input type="date" class="form-control" id="fecha_salida" name="fecha_salida" placeholder="Another input">
-                <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
-                
-            </div>
-            <input type="hidden"  name="idhabitacion" value="<?php echo  $idhabitacion ?>" >
-            <input type="hidden" name="ajax">     
-            <input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input>
-        </form>
+         
+           <a href="resevar.php?idhabitacion=<?php echo $idhabitacion ?>"><input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input></a> 
+        
     </div>
     </div>
     
@@ -110,8 +94,7 @@
                         success: function(data)
                         {
                             //para que se me borren los alertas cuando el campo cumplte las condiciones
-                            $('#e_ingreso').html('');
-                            $('#e_salida').html('');
+                            
                            
 
                             $("#mensaje").html(data);

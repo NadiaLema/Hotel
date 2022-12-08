@@ -15,7 +15,7 @@ include 'Model/conexion_bd.php';
    
 
     <main>
-        <section class="container section_1">
+        <section class="container section_1" id="nosotros">
           <h3. class="section_1-title">"HOTEL MENDOZA"</h3>
             <div class="us">
                 <div class="us-text">
@@ -39,7 +39,7 @@ include 'Model/conexion_bd.php';
 
 
 
-    <h1 class="Room">Habitaciones</h1>
+    <h1 class="Room" id="habitaciones">Habitaciones</h1>
     <div class="container-card">
     <?php
 
@@ -73,33 +73,33 @@ include 'Model/conexion_bd.php';
 
     </div>
     
-     <h1 class="servicio">Servicios</h1>
+     <h1 class="servicio" id="servicio">Servicios</h1>
       
         
         <div class="container-servicio">
             <ul class="servicio1">
                 <li class="service"><i class="las la-shapes" style="font-size:34px ;"></i> Actividades para niños</li>
-                <li><i class="las la-swimmer" style="font-size:34px;"></i>Piscina interior</li>
-                <li><i class="las la-dumbbell" style="font-size:34px;"></i>Gimnasio</li>
-                <li><i class="las la-spa" style="font-size:34px;"></i>Spa</li>
-                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i>Piscina exterior</li>
-                <li><i class="las la-utensils"style="font-size:34px;"></i>Restaurante</li>
+                <li><i class="las la-swimmer" style="font-size:34px;"></i> Piscina interior</li>
+                <li><i class="las la-dumbbell" style="font-size:34px;"></i> Gimnasio</li>
+                <li><i class="las la-spa" style="font-size:34px;"></i> Spa</li>
+                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i> Piscina exterior</li>
+                <li><i class="las la-utensils"style="font-size:34px;"></i> Restaurante</li>
             </ul>
             <ul class="servicio2">
                 <li class="service"><i class="las la-dungeon" style="font-size:34px ;"></i> Sala de Eventos</li>
-                <li><i class="las la-ambulance" style="font-size:34px;"></i>medicos 24hs</li>
-                <li><i class="las la-dumbbell" style="font-size:34px;"></i>Gimnasio</li>
-                <li><i class="las la-spa" style="font-size:34px;"></i>Spa</li>
-                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i>Piscina exterior</li>
-                <li><i class="las la-utensils"style="font-size:34px;"></i>Restaurante</li>
+                <li><i class="las la-ambulance" style="font-size:34px;"></i> Médicos 24hs.</li>
+                <li><i class="las la-dumbbell" style="font-size:34px;"></i> Gimnasio</li>
+                <li><i class="las la-spa" style="font-size:34px;"></i> Spa</li>
+                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i> Piscina exterior</li>
+                <li><i class="las la-utensils"style="font-size:34px;"></i> Restaurante</li>
             </ul>
             <ul class="servicio3">
                 <li class="service"><i class="las la-car" style="font-size:34px ;"></i> Estacionamiento</li>
-                <li><i class="las la-swimmer" style="font-size:34px;"></i>Piscina interior</li>
-                <li><i class="las la-dumbbell" style="font-size:34px;"></i>Gimnasio</li>
-                <li><i class="las la-spa" style="font-size:34px;"></i>Spa</li>
-                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i>Piscina exterior</li>
-                <li><i class="las la-utensils"style="font-size:34px;"></i>Restaurante</li>
+                <li><i class="las la-swimmer" style="font-size:34px;"></i> Piscina interior</li>
+                <li><i class="las la-dumbbell" style="font-size:34px;"></i> Gimnasio</li>
+                <li><i class="las la-spa" style="font-size:34px;"></i> Spa</li>
+                <li><i class="las la-umbrella-beach"style="font-size:34px;"></i> Piscina exterior</li>
+                <li><i class="las la-utensils"style="font-size:34px;"></i> Restaurante</li>
             </ul>
         </div>
 

@@ -1,4 +1,3 @@
-
 <?php
     $contrasena = "";
     $usuario = "root";

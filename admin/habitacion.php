@@ -1,46 +1,71 @@
-<?php include "View/navbar.php"?>
-<main class="app-content">
-    <div class="app-title">
-         <div>
-            <h1><i class="fa fa-dashboard"></i> Administrador</h1>
-        </div>
-    </div>
-   <!--botón-->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-info" data-toggle="modal">Nuevo</button>    
-            </div>    
-        </div>    
-    </div>    
+<?php 
+ include "View/navbar.php";
+ include "Model/conexion.php";
+
+ $sentencia = $bd->query("SELECT * FROM habitacion");
+ $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ);
+ 
+?>
+
+<div class="app-title" >
+    <div>
+    <h1><i class="fa fa-dashboard"></i> Habitación</h1>
+     </div>
+</div>
+
+<!--estructura de la tabla-->
+<!--estructura de la tabla-->
+<div class="container">
+        
     <br>  
-    
-    <!--tabla-->
+
     <div class="container caja">
+         
         <div class="row">
             <div class="col-lg-12">
             <div class="table-responsive">        
-            <table id="tablahab" class="table table-striped table-bordered table-condensed" style="width:100%" >
-                    <thead class="text-center">
-                        <tr>
-                            <th>idHabitación</th>
-                            <th>Nombre</th>                   
-                            <th>Descripción</th>  
-                            <th>Precio</th>
-                            <th>Imagen</th>
-                            <th>Acciones</th> 
-                        </tr>
-                    </thead>
-                    <tbody>                           
-                    </tbody>        
-                </table>                  
-                             
+                <table id="tablacliente" class="table table-striped table-bordered table-condensed" style="width:100%" >
+                                
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">#id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">precio</th>
+                    
+                    
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach ($habitacion as $dato) {
+                     $valor="<img width='50'src='data:image/jpg;base64,".base64_encode($dato->img)."'>";
+                    ?>
+                  
+                    <tr>
+                    <th scope="row"><?php echo $dato->idhabitacion ?></th>
+                    <td><?php echo $dato->tipo_habitacion ?></td>
+                    <td>
+                    <?php
+                     echo $valor;
+                    ?>   
+                    <?php echo $dato->descripcion ?>
+                    </td>
+                    <td><?php echo $dato->valor ?></td>
+                    <th><?php echo $dato->precio ?></th>
+                   
+                    
+                    </tr>
+                    <?php
+                        }
+                    ?>
+                </tbody>
+
+                </table>               
             </div>
             </div>
         </div>  
     </div>   
 
 
-
-</main>
-<?php include "View/parte_inferior.php"?>
