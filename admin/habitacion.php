@@ -1,8 +1,10 @@
 <?php 
  include "View/navbar.php";
  include "Model/conexion.php";
+
  $sentencia = $bd->query("SELECT * FROM habitacion");
  $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ);
+ 
 ?>
 
 <div class="app-title" >
@@ -38,12 +40,19 @@
                 <tbody>
                     <?php
                         foreach ($habitacion as $dato) {
+                     $valor="<img width='50'src='data:image/jpg;base64,".base64_encode($dato->img)."'>";
                     ?>
+                  
                     <tr>
                     <th scope="row"><?php echo $dato->idhabitacion ?></th>
                     <td><?php echo $dato->tipo_habitacion ?></td>
-                    <td><?php echo $dato->descripcion ?></td>
-                    
+                    <td>
+                    <?php
+                     echo $valor;
+                    ?>   
+                    <?php echo $dato->descripcion ?>
+                    </td>
+                    <td><?php echo $dato->valor ?></td>
                     <th><?php echo $dato->precio ?></th>
                    
                     
