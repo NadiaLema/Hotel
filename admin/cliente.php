@@ -1,10 +1,6 @@
 <?php 
-include "./View/navbar.php";
-include "./Model/conexion.php";
-
-$sentencia = $bd->query("SELECT * FROM cliente");
-$cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
-
+ include "View/navbar.php";
+ include "Model/conexion.php"; 
 ?>
     
 <div class="app-title" >
@@ -19,9 +15,7 @@ $cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
     <br>  
 
     <div class="container caja">
-         <?php
-        foreach ($cliente as $dato) 
-         ?>
+         
         <div class="row">
             <div class="col-lg-12">
             <div class="table-responsive">        
@@ -40,6 +34,9 @@ $cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                        foreach ($cliente as $dato) 
+                    ?>
                     <tr>
                     <th scope="row"><?php echo $dato->idcliente?></th>
                     <td><?php echo $dato->nombre_completo?></td>

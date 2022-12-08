@@ -1,4 +1,8 @@
-<?php include "./View/navbar.php"?>
+<?php 
+ include "View/navbar.php";
+
+
+?>
 
 <div class="app-title" >
     <div>
@@ -33,18 +37,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    foreach ($habitacion as $dato){ 
+                    ?>
                     <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <th>las</th>
-                    <th>
+                    <td scope="row"><?php echo $dato->idhabitacion;?></td>
+                    <td><?php echo $dato->tipo_habitacion;?></td>
+                    <td><?php echo $dato->descripcion;?></td>
+                    <td><?php echo $dato->img;?></td>
+                    <td><?php echo $dato->precio;?></td>
+                    <td>
                         <a class="btn btn-primary btn-sm" href="">Editar</a>
                         <a class="btn btn-danger btn-sm" href="">Eliminar</a>
 
-                    </th>
+                    </td>
                     </tr>
+                    <?php 
+                    }
+                    ?>
                     
                 </tbody>
 
