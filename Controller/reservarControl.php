@@ -6,7 +6,7 @@
     $idCliente = null;
     $idreserva = null;
 
-    if (isset($_POST["ajaxF"]) && isset($_POST["idhabitacion"])) {
+    if (isset($_POST["ajax"])) {
            
         //$idreserva = $_POST["idreserva"];
         //$fechaE = $_POST['fechaE'];
@@ -15,6 +15,12 @@
         $fecha_ingreso = $_POST['fecha_ingreso'];
         $fecha_salida  = $_POST['fecha_salida'];
         $idhabitacion = $_POST['idhabitacion'];
+        $nombre = $_POST['nombre'];
+        $telefono = $_POST['telefono'];
+        $email = $_POST['email'];
+        $dirreccion = $_POST['dirreccion'];
+        $provincia = $_POST['provincia'];
+        $pais = $_POST['pais'];
 
         $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
@@ -38,20 +44,7 @@
         }else if ($fecha_salida < $fecha_ingreso) {
             $mensaje = "<script>document.getElementById('e_salida').innerHTML='La fecha de salida debe ser mayor a la fecha de ingreso.';</script>";
 
-        }
-    
-    } 
-
-    if (isset($_POST["ajax"])) {
-
-        $nombre = $_POST['nombre'];
-        $telefono = $_POST['telefono'];
-        $email = $_POST['email'];
-        $dirreccion = $_POST['dirreccion'];
-        $provincia = $_POST['provincia'];
-        $pais = $_POST['pais'];
-
-        if ($nombre == "") {
+        }else  if ($nombre == "") {
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
 
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
@@ -102,10 +95,8 @@
             $mensaje = "<script>window.location='index.php';</script>";
           
         }
-
-    }
-
     
+    } 
 
     //echo $resultado;
     //echo $idCliente;
