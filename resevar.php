@@ -53,7 +53,7 @@
             </ul>
 
         </div>
-        <div class="col-md-8 order-md-1">
+        <div class="col-md-8 order-md-1 mb-5">
             <h4 class="mb-3">DATOS PERSONALES</h4>
             <div id="mensaje"></div>
             <form action="" id="form_ajax" method="post">
