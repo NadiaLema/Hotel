@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<form class="form form--hidden--dos" id="restaurar">
+    <meta name="viewport" content="width=<form class="form form--hidden--dos id="restaurar">
     <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="Includes/css/estilo_login.css">
     
     <title>Restaurar Contraseña</title>
 </head>
@@ -20,10 +21,8 @@
                 <p></p>
             </div>
           
-            <button class="form__button" type="submit">Continuar</button>
-            <p class="form__text">
-                <a class="form__link" href="./" id="linkLogin">¿Ya tienes una cuenta? Iniciar sesión</a>
-            </p>
+            <button class="form__button" type="submit">Enviar</button>
+            
         </form>
     </div>
     <script src="login.js"></script>

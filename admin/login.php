@@ -30,9 +30,7 @@
         <p class="form__text">
                 <a href="restaurar-contraseña.php" class="form__link">Olvidaste tu contraseña?</a>
             </p>
-            <p class="form__text">
-            No tienes una cuenta?  <a class="form__link" href="registar.php" id="linkLogin">Crear Cuenta</a>
-            </p>
+           
     </div>
    
 </body>

@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-4 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Resumen de mí reserva</span>
+                <span class="text-muted">Resumen de mi reserva</span>
 
             </h4>
             <ul class="list-group mb-3">
@@ -154,7 +154,7 @@
                     url: url,
                     data: $("#form_ajax").serialize(),
                     success: function(data) {
-                        //para que se me borren los alertas cuando el campo cumplte las condiciones
+                        //para que se me borren los alertas cuando el campo cumple las condiciones
                         $('#e_nombre').html('');
                         $('#e_telefono').html('');
                         $('#e_email').html('');
