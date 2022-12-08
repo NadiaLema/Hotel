@@ -1,7 +1,8 @@
 <?php 
  include "View/navbar.php";
-
-
+ include "Model/conexion.php";
+ $sentencia = $bd->query("SELECT * FROM habitacion");
+ $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ);
 ?>
 
 <div class="app-title" >
@@ -137,4 +138,3 @@
 </div>  
       
 
-<?php include "./View/parte_inferior.php"?>
