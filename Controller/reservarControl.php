@@ -60,7 +60,7 @@
             $mensaje = "<script>document.getElementById('e_email').innerHTML='Email inválido.';</script>";
        
         }else if ($dirreccion == "") {
-            $mensaje = "<script>document.getElementById('e_direccion').innerHTML='Por favor ingrese dirrección.';</script>"; 
+            $mensaje = "<script>document.getElementById('e_direccion').innerHTML='Por favor ingrese dirección.';</script>"; 
 
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$dirreccion)){
             $mensaje = "<script>document.getElementById('e_direccion').innerHTML='Solo se permiten letras!';</script>";
