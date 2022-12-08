@@ -33,7 +33,7 @@
                     <th scope="col">Descripción</th>
                     <th scope="col">Imagen</th>
                     <th scope="col">precio</th>
-                    
+                    <th scope="col">Acciones</th>
                     
                     </tr>
                 </thead>
@@ -46,16 +46,19 @@
                     <tr>
                     <th scope="row"><?php echo $dato->idhabitacion ?></th>
                     <td><?php echo $dato->tipo_habitacion ?></td>
+                    <td><?php echo $dato->descripcion ?></td>
                     <td>
                     <?php
                      echo $valor;
                     ?>   
-                    <?php echo $dato->descripcion ?>
                     </td>
-                    <td><?php echo $dato->valor ?></td>
                     <th><?php echo $dato->precio ?></th>
-                   
-                    
+                    <!--botones-->
+                    <th>
+                     <a class="btn btn-primary btn-sm" href="">Editar</a>  
+                     <a class="btn btn-danger btn-sm" href="">Cancelar</a>
+
+                    </th>
                     </tr>
                     <?php
                         }
