@@ -131,15 +131,11 @@
                     url: url,
                     data: $("#form_ajax").serialize(),
                     success: function(data) {
-<<<<<<< HEAD
-                        //para que se me borren los alertas cuando el campo cumple las condiciones
-=======
-                        //para que se me borren los alertas cuando el campo cumplte las condiciones
+                        //para que se me borren los alertas cuando el campo cumplete las condiciones
                         $('#e_ingreso').html('');
                         $('#e_salida').html('');
                         $('#e_ingreso').html('');
                         $('#e_salida').html('');
->>>>>>> 675b4f3dd1e61320ddad7ed6244663c7a1a4919b
                         $('#e_nombre').html('');
                         $('#e_telefono').html('');
                         $('#e_email').html('');

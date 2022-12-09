@@ -15,14 +15,12 @@
           
             <div class="form-control">
                 <input type="text" name="usuario" id="usuario" class="form__input" autofocus placeholder="Usuario">
-                
-                <p></p>
+                 
             </div>
             
             <div class="form-control">
                 <input id="password" name="contraseña" type="password" class="form__input" autofocus placeholder="Contraseña">
                
-                <p></p>
             </div>
             
             <button class="form__button" type="submit">Continuar</button>
