@@ -12,8 +12,8 @@
     <h1><i class="fa fa-dashboard"></i> Habitación</h1>
      </div>
 </div>
-
-<!--estructura de la tabla-->
+<br>
+<a href="../nuevaHabitacion.php" class="btn btn-success">Agregar Habitación</a>
 <!--estructura de la tabla-->
 <div class="container">
         
@@ -47,11 +47,7 @@
                     <th scope="row"><?php echo $dato->idhabitacion ?></th>
                     <td><?php echo $dato->tipo_habitacion ?></td>
                     <td><?php echo $dato->descripcion ?></td>
-                    <td>
-                    <?php
-                     echo $valor;
-                    ?>   
-                    </td>
+                    <td><img width="200px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
                     <th><?php echo $dato->precio ?></th>
                     <!--botones-->
                     <th>
