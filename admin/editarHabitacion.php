@@ -17,7 +17,7 @@
 
   <?php 
    include "Model/conexion.php";
-   $id = $_REQUEST['id'];
+   $id = $_GET['id'];
    $sentencia = $bd->query("SELECT * FROM habitacion WHERE idhabitacion = $id");
    $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ); 
    
@@ -44,7 +44,7 @@
                 </div>
                 <div class="row mb-3">
 
-                   <td><img width="50px;" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
+                   <td><img width="50px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
                     <input type="file" class="form-control" name="imagen">
