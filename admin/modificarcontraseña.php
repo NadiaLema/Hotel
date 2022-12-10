@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<form class="form form--hidden--dos" id="restaurar">
     <link rel="stylesheet" href="login.css">
-    <link rel="stylesheet" href="Includes/css/estilo_login.css">
+    <link rel="stylesheet" href="view/css/estilo_login.css">
     
     <title>modificar contraseña</title>
 </head>
