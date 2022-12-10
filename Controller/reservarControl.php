@@ -72,7 +72,7 @@
             $mensaje = "<script>document.getElementById('e_provincia').innerHTML='Solo se permiten letras!';</script>";
     
         }else if ($pais == "") {
-            $mensaje = "<script>document.getElementById('e_pais').innerHTML='Por favor ingrese nombre.';</script>"; 
+            $mensaje = "<script>document.getElementById('e_pais').innerHTML='Por favor ingrese pais.';</script>"; 
 
         }else if (!preg_match('/^\S+$/',$pais)) {
             $mensaje = "<script>document.getElementById('e_pais').innerHTML='No ingrese espacios';</script>"; 
