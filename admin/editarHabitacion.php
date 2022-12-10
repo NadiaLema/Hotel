@@ -47,7 +47,7 @@
                    <td><img width="50px;" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
-                    <input type="file" class="form-control" name="img">
+                    <input type="file" class="form-control" name="imagen">
                     </div>
                 </div>
                 <div class="row mb-3">
