@@ -84,7 +84,7 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="telefono">Teléfono</label>
-                        <input type="text" class="form-control" name="telefono" value="" required>
+                        <input type="text" class="form-control" name="telefono" value="" maxlength="10" required>
                         <div style="font-size: 12px;" id="e_telefono" class="text-danger"></div>
                     </div>
                 </div>
