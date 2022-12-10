@@ -44,10 +44,10 @@
                 </div>
                 <div class="row mb-3">
 
-                   <td><img width="50px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
+                    <td><img width="50px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
-                    <input type="file" class="form-control" name="imagen">
+                    <input type="file" class="form-control" name="imagen" accept="">
                     </div>
                 </div>
                 <div class="row mb-3">
