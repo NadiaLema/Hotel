@@ -64,12 +64,9 @@ include 'Model/conexion_bd.php';
         </div>
      </a>
     
-       
-    
     <?php
     }
     ?>
-
 
     </div>
     

@@ -54,7 +54,7 @@
             $mensaje = "<script>document.getElementById('e_telefono').innerHTML='Télefono inválido!';</script>";
         
         }else if ($email == "") {
-            $mensaje = "<script>document.getElementById('e_email').innerHTML='Por favor complete el campo!';</script>";
+            $mensaje = "<script>document.getElementById('e_email').innerHTML='Por favor complete el email!';</script>";
        
         }else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $mensaje = "<script>document.getElementById('e_email').innerHTML='Email inválido.';</script>";
