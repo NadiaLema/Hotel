@@ -62,13 +62,10 @@
         }else if ($dirreccion == "") {
             $mensaje = "<script>document.getElementById('e_direccion').innerHTML='Por favor ingrese dirección.';</script>"; 
 
-        }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$dirreccion)){
-            $mensaje = "<script>document.getElementById('e_direccion').innerHTML='Solo se permiten letras!';</script>";
-    
         }else if ($provincia == "") {
             $mensaje = "<script>document.getElementById('e_provincia').innerHTML='Por favor ingrese provincia.';</script>"; 
 
-        }else  if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$provincia)){
+        }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$provincia)){
             $mensaje = "<script>document.getElementById('e_provincia').innerHTML='Solo se permiten letras!';</script>";
     
         }else if ($pais == "") {
