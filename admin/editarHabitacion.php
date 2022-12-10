@@ -29,7 +29,7 @@
                         foreach ($habitacion as $dato) {
                      
                     ?>
-            <form action="Controller/editH.php?idEditar=<?php echo ($dato->idhabitacion)?>" method="POST" enctype="multipart/form.dara">
+            <form action="Controller/editH.php?idEditar=<?php echo ($dato->idhabitacion)?>" method="POST" enctype="multipart/form-data">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Nombre</label>
                     <div class="col-sm-6">
@@ -44,10 +44,11 @@
                 </div>
                 <div class="row mb-3">
 
-                    <td><img width="50px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
+                    
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
-                    <input type="file" class="form-control" name="imagen" accept="">
+                    <input type="file"  name="imagen" >
+                    
                     </div>
                 </div>
                 <div class="row mb-3">
