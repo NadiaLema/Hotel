@@ -1,19 +1,23 @@
 <?php
 
-error_reporting(1);
-include "Model/conexion.php";
+
+include "../Model/conexion.php";
 $id = $_REQUEST['idEditar'];
-$nombre = $_POST['nombreH'];
-$descripcion = $_POST['descripcionH'];
-$imagen = addcslashes(file_get_contents($_FILES['imagen']['tmp_name']));       
+$nombre = $_POST['nombre'];
+$descripcion= $_POST['descripcion'];
+//$img = addcslashes(file_get_contents($_FILES['img']['tmp_name']));       
+$precio = $_POST['precio'];
+//consulta
+$sentencia = $bd->query("UPDATE habitacion SET nombre = ?, descripcion = ?, precio = ? WHERE idhabitacion = ?");
+/*
+ $sentencia = $bd->prepare("UPDATE habitacion SET 
+ nombre = ? ,
+ descripcion = '$descripcion',
+ img = '$imagen',
+ precio = '$precio' WHERE idhabitacion = $id ");
+ */
+ $resultado = $mysqli->query($sentencia);
 
-$bd = "UPDATE habitacion SET 
-nombre ='nombre',
-nombre ='nombre',
-nombre ='nombre',
-nombre ='nombre'";
-
-$resultado = $conexion->query($bd);
 if($resultado){
     header('Location: index.php');
 }else{

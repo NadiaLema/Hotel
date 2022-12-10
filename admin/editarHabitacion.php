@@ -17,40 +17,48 @@
 
   <?php 
    include "Model/conexion.php";
-   $id = $_REQUEST['idhabitacion'];
-   $bd = "SELECT * FROM habitacion WHERE idhabitacion = $id";
-   $resultado = $conexion->query($bd);
-   $Fila = $resultado->fetch_assoc();
+   $id = $_REQUEST['id'];
+   $sentencia = $bd->query("SELECT * FROM habitacion WHERE idhabitacion = $id");
+   $habitacion = $sentencia->fetchAll(PDO::FETCH_OBJ); 
+   
   ?>
 
    <div class="container my-5">
       <h2>Editar Habitación</h2>
-            <form action="editH.php?idEditar=<?php echo $Fila["id"]?>" method="POST" enctype="multipart/form.dara">
+                    <?php
+                        foreach ($habitacion as $dato) {
+                     
+                    ?>
+            <form action="Controller/editH.php?idEditar=<?php echo ($dato->idhabitacion)?>" method="POST" enctype="multipart/form.dara">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Nombre</label>
                     <div class="col-sm-6">
-                    <input type="text" class="form-control" name="nombreH" Value="<?php echo $Fila['nombre']?>">
+                    <input type="text" class="form-control" name="nombre" Value="<?php echo ($dato->tipo_habitacion) ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Descripción</label>
                     <div class="col-sm-6">
-                    <input type="text" class="form-control" name="descripcionH" Value="<?php echo $Fila['descripcion']?>">
+                    <input type="text" class="form-control" name="descripcion" Value="<?php echo ($dato->descripcion)?>">
                     </div>
                 </div>
                 <div class="row mb-3">
+
+                   <td><img width="50px;" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
-                    <input type="file" class="form-control" name="imagenH">
+                    <input type="file" class="form-control" name="img">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Precio</label>
                     <div class="col-sm-6">
-                    <input type="number" class="form-control" name="precioH" Value="<?php echo $Fila['precio']?>">
+                    <input type="text" class="form-control" name="precio" Value="<?php echo ($dato->precio)?>">
                     </div>
                 </div>
-                
+                <?php
+                    }
+                ?>
               <!--botones-->     
                 <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">

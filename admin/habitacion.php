@@ -40,7 +40,7 @@
                 <tbody>
                     <?php
                         foreach ($habitacion as $dato) {
-                     $valor="<img width='50'src='data:image/jpg;base64,".base64_encode($dato->img)."'>";
+                     
                     ?>
                   
                     <tr>
@@ -51,7 +51,7 @@
                     <th><?php echo $dato->precio ?></th>
                     <!--botones-->
                     <th>
-                     <a class="btn btn-primary btn-sm" href="">Editar</a>  
+                     <a class="btn btn-primary btn-sm" href="editarHabitacion.php?id=<?php echo ($dato->idhabitacion)?>">Editar</a>  
                      <a class="btn btn-danger btn-sm" href="">Cancelar</a>
 
                     </th>
