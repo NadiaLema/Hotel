@@ -7,16 +7,22 @@ include "../Model/conexion.php";
 
 $email = $_POST['email'];
 
+$respuesta = new stdClass();
 
 //$consulta = "INSERT INTO usuario(nombre, email, contraseña) VALUES ('$nombre','$email','$contraseña')";//
-$consulta=$bd->prepare("SELECT*FROM admin email=? ");
-$consulta->execute([$email]); 
 
-$datos=$consulta->fetch(PDO::FETCH_OBJ);
-if ($datos===FALSE) {
-    header("Location: ../restaurar-contraseña.php?mensaje=no");
-} else if($consulta->rowCount()==1){
-   header("Location: ../login.php"); 
+
+if( $email != "" ){
+ $conexion = new mysqli('bd');
+ $sql = " SELECT * FROM admmin WHERE admin = '$email' ";
+ $resultado = $conexion->query($sql);
+ if($resultado->num_rows > 0){
+   $admin = $resultado->fetch_assoc();
+   $linkTemporal = generarLinkTemporal( $usuario['IdUsuario'], $usuario['Username'] );
+   if($linkTemporal){
+    enviarEmail( $email, $linkTemporal );
+    $respuesta->mensaje = '<div class="alert alert-info"> Un correo ha sido enviado a su cuenta de email con las instrucciones para restablecer la contraseña </div>';
+   }
+ }
 }
-
 ?>
