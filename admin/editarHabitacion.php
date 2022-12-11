@@ -47,6 +47,7 @@
                     
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
+                    <img width="50px" src="data:image/jpg;base84,<?php echo base64_encode($dato->img);?>">
                     <input type="file" name="imagen" >
                     
                     </div>
