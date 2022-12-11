@@ -47,7 +47,7 @@
                     <th scope="row"><?php echo $dato->idhabitacion ?></th>
                     <td><?php echo $dato->tipo_habitacion ?></td>
                     <td><?php echo $dato->descripcion ?></td>
-                    <td><img width="50px" src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>"></td>
+                    <td><img width="50px" src="data:image/jpg;base84,<?php echo base64_encode($dato->img);?>"></td>
                     <th><?php echo $dato->precio ?></th>
                     <!--botones-->
                     <th>
