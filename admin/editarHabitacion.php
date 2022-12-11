@@ -47,7 +47,7 @@
                     
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
-                    <input type="file"  name="imagen" >
+                    <input type="file" name="imagen" >
                     
                     </div>
                 </div>
