@@ -71,7 +71,7 @@
          <!--formulario de horarios-->
          <div class="col-md-4 order-md-2 mb-4">
         <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Dias de Estancia</span>
+          <span class="text-muted">Días de Estancia</span>
         </h4>
          
            <a href="resevar.php?idhabitacion=<?php echo $idhabitacion ?>"><input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input></a> 
