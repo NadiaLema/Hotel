@@ -13,11 +13,16 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
-
+<html>
 <body>
+
+  
    <div class="container my-5">
       <h2>Nueva Habitación</h2>
+                    
+                    
             <form action="Controller/nuevoH.php" method="POST" enctype="mulpart/form-data">
+
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Nombre</label>
                     <div class="col-sm-6">
@@ -46,7 +51,7 @@
               <!--botones-->     
                 <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
-                         <button type="submit" class="btn btn-primary">Enviar</button>
+                         <button type="submit" class="btn btn-primary">Crear</button>
                     </div>
                     <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="../habitacion.php" role="button">Cancelar</a>

@@ -13,7 +13,7 @@
      </div>
 </div>
 <br>
-<a href="../nuevaHabitacion.php" class="btn btn-success">Agregar Habitación</a>
+<a href="nuevaHabitacion.php" class="btn btn-success">Agregar Habitación</a>
 <!--estructura de la tabla-->
 <div class="container">
         
@@ -52,7 +52,7 @@
                     <!--botones-->
                     <th>
                      <a class="btn btn-primary btn-sm" href="editarHabitacion.php?id=<?php echo ($dato->idhabitacion)?>">Editar</a>  
-                     <a class="btn btn-danger btn-sm" href="">Cancelar</a>
+                     <a class="btn btn-danger btn-sm" href="Controller/eliminarH.php?id=<?php echo ($dato->idhabitacion)?>">Eliminar</a>
 
                     </th>
                     </tr>

@@ -1,22 +1,22 @@
 <?php 
-include "Model/conexion.php";
-//variables
-$nombreH =$_POST["nombre"];
-$descripcionH =$_POST["descripcion"];
-$precioH =$_POST["precio"];
-$imagenH = addcslashes(file_get_contents($_FILES["imagen"]['tpm_name'])) ;
+print_r ($_POST) ;
 
-//consulta
-$sentencia = $bd->prepare("INSERT INTO 'habitacion'(tipo_habitacion,descripcion,img, precio) VALUES('$nombreH','$descripcionH','$precioH','$imagenH')");
-$resultado = $sentencia->execute([$nombreH,$descripcionH,$precioH,$imagenH]);
+include "../Model/conexion.php";
+//variables
+$nombre =$_POST['nombre'];
+$descripcion=$_POST['descripcion'];
+$image = $_FILES['imagen'];
+$precio =$_POST['precio'];
+//Consulta
+$sentencia = $bd->prepare("INSERT INTO habitacion(tipo_habitacion,descripcion,img,precio) VALUE (?,?,?,?)");
+//resultado mediante las variables 
+$resultado = $sentencia->execute([$nombre,$descripcion,$image,$precio]);
+
 if($resultado){
-    header('Location: index.php');
+    header('Location: ../habitacion.php');
 }else{
     echo "No se insertaron los datos";
 }
-
-
-
 
 
 ?>
