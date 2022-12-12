@@ -49,9 +49,13 @@
 
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";
-    
+
+        }else  if ($telefono == "") {
+            $mensaje = "<script>document.getElementById('e_telefono').innerHTML='Por favor ingrese télefono.';</script>"; 
+ 
+
         }else if (!preg_match('/[0-9]{9}$/',$telefono) || !preg_match('/^\d{10}$/',$telefono)) {
-            $mensaje = "<script>document.getElementById('e_telefono').innerHTML='Télefono inválido!';</script>";
+            $mensaje = "<script>document.getElementById('e_telefono').innerHTML='solo se permiten numeros!';</script>";
         
         }else if ($email == "") {
             $mensaje = "<script>document.getElementById('e_email').innerHTML='Por favor complete el email!';</script>";
