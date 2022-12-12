@@ -357,7 +357,7 @@
 
             </form>
         </div>
-
+      
         <script>
         $(function() {
             $("#btn_ajax").click(function() {
@@ -367,7 +367,7 @@
                     url: url,
                     data: $("#form_ajax").serialize(),
                     success: function(data) {
-                        //para que se me borren los alertas cuando el campo cumplete las condiciones
+                        //para que se me borren los alertas cuando el campo complete las condiciones
                         $('#e_ingreso').html('');
                         $('#e_salida').html('');
                         $('#e_ingreso').html('');
