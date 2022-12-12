@@ -1,11 +1,16 @@
 <?php
-print_r ($_POST) ;
+// print_r ($_POST) ;
 
 include "../Model/conexion.php";
-/*
+$mensaje = null;
+$resultado = null;
+
 $id = $_REQUEST['idEditar'];
 $nombre = $_POST['nombre'];
 $descripcion= $_POST['descripcion'];
+<<<<<<< HEAD
+$image = $_FILES['imagen'];   
+=======
 <<<<<<< HEAD
 $img = $_FILES['imagen']['name'];   
 $precio = $_POST['precio'];
@@ -15,40 +20,29 @@ $archivo = $_FILES['imagen'];
 $tmp_name=$archivo['tmp_name'];
 $contenido_archivo=file_get_contents($tmp_name);
 $archivoBLOB=addslashes($contenido_archivo);
+>>>>>>> 94861bef64ef77282d8b693b38195257ebb10a00
 $precio = $_POST['precio'];
 
+//validaciones
 
-if (isset($_REQUEST['idEditar'])) {
-        $nombre = $_POST['nombre'];
-        $descripcion= $_POST['descripcion'];
-        $precio = $_POST['precio'];
+if ($nombre == "") {
+    $mensaje = "<script>document.getElementById('nombre_error').innerHTML='Por favor ingrese nombre.';</script>"; 
 
-    if (isset($_FILES['imagen']['name'])) {
-        $tipoArchivo = $_FILES['imagen']['type'];
-        $nombreArchivo = $_FILES['imagen']['name'];
-        $tamanoArchivo = $_FILES['imagen']['size'];
-        $imagenSubida = fopen($_FILES['imagen']['tmp_name'], 'r');
-        $binariosImagen = fread($imagenSubida, $tamanoArchivo);
+}else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
+    $mensaje = "<script>document.getElementById('nombre_error').innerHTML='Solo se permiten letras!';</script>";
 
-            //consulta
-        $sentencia = $bd->prepare("UPDATE habitacion SET tipo_habitacion = ?, descripcion = ?,img = ?, precio = ? WHERE idhabitacion = ?");
-        $resultado = $sentencia->execute([$nombre,$descripcion,$binariosImagen,$precio,$id]);
-    }
+}else  if ($descripcion == "") {
+    $mensaje = "<script>document.getElementById('descripcion_error').innerHTML='Por favor ingrese una descripción.';</script>";
 
-}
-*/
-$id = $_REQUEST['idEditar'];
+}else  if ($precio == "") {
+    $mensaje = "<script>document.getElementById('precio_error').innerHTML='Por favor ingrese un precio.';</script>";
 
-if(isset($_REQUEST["idEditar"])){
-    $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-    if($check !== false){
-        $image = $_FILES['imagen']['tmp_name'];
-        $imgContent = addslashes(file_get_contents($image));
-        
-        $nombre = $_POST['nombre'];
-        $descripcion= $_POST['descripcion'];
-        $precio = $_POST['precio'];
+}else if(!preg_match('/^[0-9]+$/',$precio)){
+    $mensaje = "<script>document.getElementById('precio_error').innerHTML='solo se permiten numeros.';</script>"; 
 
+<<<<<<< HEAD
+ // consulta
+=======
 
         
         //Insert image content into database
@@ -109,8 +103,17 @@ $resultado = $sentencia->execute([$nombre,$descripcion,$archivo,$precio,$id]);
 
 if($resultado){
     header('Location: ../index.php');
+>>>>>>> 94861bef64ef77282d8b693b38195257ebb10a00
 }else{
-    echo "No se insertaron los datos";
+   
+    $sentencia = $bd->prepare("UPDATE habitacion SET tipo_habitacion = ?, descripcion = ?,img = ?, precio = ? WHERE idhabitacion = ?");
+    $resultado = $sentencia->execute([$nombre,$descripcion,$binariosImagen,$precio,$id]);
+
+    
+    $mensaje = "<script>window.location='../habitacion.php';</script>";
 }
-*/
+
+
+
+
 ?>

@@ -29,18 +29,20 @@
                         foreach ($habitacion as $dato) {
                      
                     ?>
-            <form action="Controller/editH.php?idEditar=<?php echo ($dato->idhabitacion)?>" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" id="form_edit">
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Nombre</label>
                     <div class="col-sm-6">
                     <input type="text" class="form-control" name="nombre" Value="<?php echo ($dato->tipo_habitacion) ?>">
                     </div>
+                    <div id="nombre_error" class="text-danger" style="font-size: 12px;"></div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Descripción</label>
                     <div class="col-sm-6">
                     <input type="text" class="form-control" name="descripcion" Value="<?php echo ($dato->descripcion)?>">
                     </div>
+                    <div id="descripcion_error" class="text-danger" style="font-size: 12px;"></div>
                 </div>
                 <div class="row mb-3">
 
@@ -57,6 +59,7 @@
                     <div class="col-sm-6">
                     <input type="text" class="form-control" name="precio" Value="<?php echo ($dato->precio)?>">
                     </div>
+                    <div id="precio_error" class="text-danger" style="font-size: 12px;"></div>
                 </div>
                 <?php
                     }
@@ -64,7 +67,7 @@
               <!--botones-->     
                 <div class="row mb-3">
                     <div class="offset-sm-3 col-sm-3 d-grid">
-                         <button type="submit" class="btn btn-primary">Enviar</button>
+                         <button type="submit"  id="btn_ajaxEH" class="btn btn-primary">Guardar</button>
                     </div>
                     <div class="col-sm-3 d-grid">
                     <a class="btn btn-outline-primary" href="" role="button">Cancelar</a>
@@ -72,8 +75,31 @@
                 </div>
                 
             </form>
+        </div>
 
-   </div>
+
+        <script>
+        $(function() {
+            $("#btn_ajaxEH").click(function() {
+                var url = "Controller/editH.php";
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: $("#form_edit").serialize(),
+                    success: function(data) {
+                        //para que se me borren los alertas cuando el campo complete las condiciones
+                        $('#nombre_error').html('');
+                        $('#descripcion_error').html('');
+                        $('#precio_error').html('');
+                        
+
+                        $("#mensaje").html(data);
+                    }
+
+                });
+            });
+        });
+        </script>
 </body>
 
 </html>

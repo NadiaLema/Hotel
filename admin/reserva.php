@@ -1,4 +1,9 @@
-<?php include "./View/navbar.php"?>
+<?php include "./View/navbar.php";
+
+    $sentencia = $bd->query("SELECT * FROM reserva");
+    $reserva = $sentencia->fetchAll(PDO::FETCH_OBJ);
+       
+?>
 
         <div class="app-title">
             <div>
@@ -24,13 +29,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <?php
+                        foreach ($reserva as $dato) {
+                     
+                    ?>
                     <tr>
-                    <th scope="row">1</th>
+                    <th scope="row"><?php echo $dato->idreserva ?></th>
                     <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <th>las</th>
+                    <td><?php echo $dato->fecha_ingreso ?></td>
+                    <td><?php echo $dato->fecha_salida ?></td>
+                    <th></th>
                     <th>
                         
                         <a class="btn btn-danger btn-sm" href="">Cancelar</a>
@@ -39,7 +47,9 @@
                     </tr>
                     
                 </tbody>
-
+                    <?php
+                        }
+                    ?>
                 </table>               
             </div>
             </div>
