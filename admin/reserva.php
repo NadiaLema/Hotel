@@ -1,6 +1,7 @@
 <?php include "./View/navbar.php";
 
-    $sentencia = $bd->query("SELECT * FROM reserva");
+    $sentencia = $bd->query("SELECT * FROM cliente INNER JOIN reserva ON  cliente.reserva_idreserva = reserva.idreserva
+                            INNER JOIN habitacion ON  reserva.habitacion_idhabitacion = habitacion.idhabitacion;");
     $reserva = $sentencia->fetchAll(PDO::FETCH_OBJ);
        
 ?>
@@ -35,10 +36,10 @@
                     ?>
                     <tr>
                     <th scope="row"><?php echo $dato->idreserva ?></th>
-                    
+                    <td><?php echo $dato->nombre_completo ?></td>
                     <td><?php echo $dato->fecha_ingreso ?></td>
                     <td><?php echo $dato->fecha_salida ?></td>
-                    <th></th>
+                    <th><?php echo $dato->tipo_habitacion ?></th>
                     <th>
                         
                         <a class="btn btn-danger btn-sm" href="">Cancelar</a>
