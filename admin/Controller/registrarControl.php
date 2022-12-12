@@ -7,22 +7,21 @@ include "../Model/conexion.php";
 
 $email = $_POST['email'];
 
-$respuesta = new stdClass();
 
 //$consulta = "INSERT INTO usuario(nombre, email, contraseña) VALUES ('$nombre','$email','$contraseña')";//
+$contraseña = $bd->prepare(" SELECT * FROM admin WHERE admin = email=?");
+$resultado->execute([$mail]);
+$datos=$contraseña->fetch(PDO::FETCH_OBJ);
 
+$email_correcto = "mi.email.correcto@gmail.com";
+ 
+$email_incorrecto = "mi.email.incorrecto";
 
-if( $email != "" ){
- $conexion = new mysqli('bd');
- $sql = " SELECT * FROM admmin WHERE admin = '$email' ";
- $resultado = $conexion->query($sql);
- if($resultado->num_rows > 0){
-   $admin = $resultado->fetch_assoc();
-   $linkTemporal = generarLinkTemporal( $usuario['IdUsuario'], $usuario['Username'] );
-   if($linkTemporal){
-    enviarEmail( $email, $linkTemporal );
-    $respuesta->mensaje = '<div class="alert alert-info"> Un correo ha sido enviado a su cuenta de email con las instrucciones para restablecer la contraseña </div>';
-   }
- }
+if (filter_var($email_incorrecto, FILTER_VALIDATE_EMAIL)) {
+  echo "Esta dirección de correo ($email_incorrecto) es válida.";
+}
+
+if (filter_var($email_correcto, FILTER_VALIDATE_EMAIL)) {
+  echo "Esta dirección de correo ($email_correcto) es válida.";
 }
 ?>
