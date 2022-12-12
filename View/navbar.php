@@ -26,7 +26,7 @@
 		<nav>
 			<ul>
 				<li><a href="#">Inicio</a></li>
-				<li><a href="#nosotros">Nosotros</a></li>
+				<li><a href="#nosotros">El Hotel</a></li>
 				<li><a href="#habitaciones">Habitaciones</a></li>
 				<li><a href="#servicio">Servicios</a></li>
 				<li><a href="#contacto">Contacto</a></li>

@@ -95,7 +95,7 @@ include 'Model/conexion_bd.php';
                 <li class="service"><i class="las la-car" style="font-size:34px ;"></i> Estacionamiento</li>
                 <li><i class="las la-key" style="font-size:34px;"></i> Portero</li>
                 <li><i class="las la-ambulance" style="font-size:34px;"></i> Médicos 24hs.</li>
-                <li><i class="las la-wheelchair" style="font-size:34px;"></i> Silla de Rueda</li>
+                <li><i class="las la-wheelchair" style="font-size:34px;"></i> Accesibilidad</li>
                
             </ul>
         </div>
