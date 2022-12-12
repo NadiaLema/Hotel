@@ -35,7 +35,7 @@
                     ?>
                     <tr>
                     <th scope="row"><?php echo $dato->idreserva ?></th>
-                    <td>Mark</td>
+                    
                     <td><?php echo $dato->fecha_ingreso ?></td>
                     <td><?php echo $dato->fecha_salida ?></td>
                     <th></th>

@@ -31,21 +31,17 @@
                 <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <div>
                         <h6 class="my-0">Habitación</h6>
+                        <?php
+                          foreach($datosHabitacion as $habitacion){
+                          ?>
                         <small class="text-muted">
                           <?php
-                          if ($idhabitacion == 1) {
-                            echo 'HABITACION SIMPLE';
-                          }else if ($idhabitacion == 2) {
-                            echo 'HABITACION DOBLE';
-                          }else if ($idhabitacion == 3) {
-                            echo 'HABITACION TRIPLE';
-                          }else if ($idhabitacion == 4) {
-                            echo 'HABITACION PREMIUM';
-                          }
-                          
-
+                          echo $habitacion->tipo_habitacion                         
                           ?>
                         </small>
+                        <?php
+                          }
+                          ?>
 
                     </div>
                 </li>

@@ -48,7 +48,7 @@
                     <td><?php echo $dato->tipo_habitacion ?></td>
                     <td><?php echo $dato->descripcion ?></td>
                     <td><img width="50px" src="data:image/jpg;base4,<?php echo base64_encode(stripslashes($dato->img));?>"></td>
-                    <th><?php echo $dato->precio ?></th>
+                    <th><?php echo "$ ".$dato->precio ?></th>
                     <!--botones-->
                     <th>
                      <a class="btn btn-primary btn-sm" href="editarHabitacion.php?id=<?php echo ($dato->idhabitacion)?>">Editar</a>  

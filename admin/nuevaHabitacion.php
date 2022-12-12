@@ -38,6 +38,7 @@
                     <div id="descripcion_error" class="text-danger" style="font-size: 12px;"></div>
                     </div>
                 </div>
+                <!--
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Imagen</label>
                     <div class="col-sm-6">
@@ -45,6 +46,7 @@
                     <div id="img_error" class="text-danger" style="font-size: 12px;"></div>
                     </div>
                 </div>
+                -->
                 <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Precio</label>
                     <div class="col-sm-6">
@@ -60,7 +62,7 @@
                     value="Guardar"></input>
                     </div>
                     <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="../habitacion.php" role="button">Cancelar</a>
+                    <a class="btn btn-outline-primary" href="habitacion.php" role="button">Cancelar</a>
                 </div>
                 </div>
                 
@@ -80,7 +82,7 @@
                         $('#nombre_error').html('');
                         $('#descripcion_error').html('');
                         $('#precio_error').html('');
-                        $('#img_error').html('');
+                        //$('#img_error').html('');
 
                         $("#mensaje").html(data);
                     }

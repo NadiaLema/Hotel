@@ -1,11 +1,13 @@
 <?php 
+
 // print_r ($_POST) ;
-$image = null;
+
 include "../Model/conexion.php";
+
 //variables
 $nombre =$_POST['nombre'];
 $descripcion=$_POST['descripcion'];
-$image = $_POST['imagen'];
+//$image = file_get_contents($_FILES['imagen']['name']);
 $precio =$_POST['precio'];
 
 //validaciones
@@ -24,19 +26,22 @@ if ($nombre == "") {
 
 }else if(!preg_match('/^([0-9]+\.+[0-9]|[0-9])+$/',$precio)){
     $mensaje = "<script>document.getElementById('precio_error').innerHTML='solo se permiten numeros.';</script>"; 
-
-        
-    
-       
+   
 }else{
 
     //Insert image content into database
      //Consulta
+<<<<<<< HEAD
     $sentencia = $bd->prepare("INSERT INTO habitacion(tipo_habitacion,descripcion,img,precio) VALUE (?,?,?,?)");
     
     
     //resultado mediante las variables 
     $resultado = $sentencia->execute([$nombre,$descripcion,$image,$precio]);
+=======
+    $sentencia = $bd->prepare("INSERT INTO habitacion(tipo_habitacion,descripcion,precio) VALUE (?,?,?)");
+     //resultado mediante las variables 
+    $resultado = $sentencia->execute([$nombre,$descripcion,$precio]);
+>>>>>>> cf433c0d6a67a7ba45345a9f91864ac23079a8c8
 
     $mensaje = "<script>window.location='habitacion.php';</script>";
 }
