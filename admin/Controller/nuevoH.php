@@ -31,17 +31,9 @@ if ($nombre == "") {
 
     //Insert image content into database
      //Consulta
-<<<<<<< HEAD
-    $sentencia = $bd->prepare("INSERT INTO habitacion(tipo_habitacion,descripcion,img,precio) VALUE (?,?,?,?)");
-    
-    
-    //resultado mediante las variables 
-    $resultado = $sentencia->execute([$nombre,$descripcion,$image,$precio]);
-=======
     $sentencia = $bd->prepare("INSERT INTO habitacion(tipo_habitacion,descripcion,precio) VALUE (?,?,?)");
      //resultado mediante las variables 
     $resultado = $sentencia->execute([$nombre,$descripcion,$precio]);
->>>>>>> cf433c0d6a67a7ba45345a9f91864ac23079a8c8
 
     $mensaje = "<script>window.location='habitacion.php';</script>";
 }
