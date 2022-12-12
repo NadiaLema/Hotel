@@ -46,7 +46,7 @@
                             </div>
                             <!--descripcion-->
                             <div class="pl-0 mb-0"> 
-                                <p class="card-text"><?php echo $dato-> ?></p>
+                                <p class="card-text"><?php echo $dato->descripcion ?></p>
                             </div>
                            
                             
