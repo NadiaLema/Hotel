@@ -12,6 +12,7 @@
         //$fechaE = $_POST['fechaE'];
         //$fechaS = $_POST['fechaS'];
 
+        $nombre_habitacion = $_POST['nombre_habitacion'];
         $fecha_ingreso = $_POST['fecha_ingreso'];
         $fecha_salida  = $_POST['fecha_salida'];
         $idhabitacion = $_POST['idhabitacion'];
@@ -83,8 +84,8 @@
     
         }else{
 
-            $sentenciaR = $bd->prepare("INSERT INTO reserva(fecha_ingreso,fecha_salida,habitacion_idhabitacion) VALUES (?,?,?);");
-            $resultadoR = $sentenciaR->execute([$fecha_ingreso,$fecha_salida,$idhabitacion]);
+            $sentenciaR = $bd->prepare("INSERT INTO reserva(fecha_ingreso,nombre_cliente,fecha_salida,nombre_habitacion,habitacion_idhabitacion) VALUES (?,?,?,?,?);");
+            $resultadoR = $sentenciaR->execute([$fecha_ingreso,$nombre,$fecha_salida,$nombre_habitacion,$idhabitacion]);
             $idreserva = $bd->lastInsertId();
 
             $sentencia = $bd->prepare("INSERT INTO cliente(nombre_completo,direccion,provincia,pais,telefono,email,reserva_idreserva) VALUES (?,?,?,?,?,?,?);");

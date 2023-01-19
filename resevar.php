@@ -33,6 +33,7 @@
                         <h6 class="my-0">Habitación</h6>
                         <?php
                           foreach($datosHabitacion as $habitacion){
+                            $nombre_habitacion = $habitacion->tipo_habitacion;
                           ?>
                         <small class="text-muted">
                           <?php
@@ -346,6 +347,7 @@
                 </div>
                 <hr class="mb-2 mt-5">
                 <input type="hidden" name="idhabitacion" value="<?php echo $idhabitacion ?>">
+                <input type="hidden" name="nombre_habitacion" value="<?php echo $nombre_habitacion ?>">
                 <input type="hidden" name="ajax">
                 <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" name="final" type="button"
                     value="Finalizar Reserva"></input>
