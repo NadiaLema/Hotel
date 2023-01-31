@@ -52,7 +52,12 @@ include 'Model/conexion_bd.php';
         <div class="card" >
             
             <div class="face front">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
+                <?php 
+                echo'<img src="./administrador/img/'.$dato->imagen.'" >';
+                ?>
+              
+        
+              
                 <h3><?php echo $dato->tipo_habitacion ?></h3>
             </div>
             <div class="face back">
