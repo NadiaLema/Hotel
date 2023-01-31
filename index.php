@@ -16,7 +16,7 @@ include 'Model/conexion_bd.php';
 
     <main>
         <section class="container section_1" id="nosotros">
-          <h3. class="section_1-title">"HOTEL MENDOZA"</h3>
+          <h3. class="section_1-title">"HOTELl MENDOZA"</h3>
             <div class="us">
                 <div class="us-text">
                  <div class="us-paragraph">
