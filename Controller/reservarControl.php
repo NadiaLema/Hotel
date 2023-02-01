@@ -91,9 +91,14 @@
             $sentencia = $bd->prepare("INSERT INTO cliente(nombre_completo,direccion,provincia,pais,telefono,email,reserva_idreserva) VALUES (?,?,?,?,?,?,?);");
             $resultado= $sentencia->execute([$nombre,$dirreccion,$provincia,$pais,$telefono,$email,$idreserva]);
             // $idCliente = $bd->lastInsertId();
-            $mensaje = "<script>window.location='index.php';</script>";
-          
+            $mensaje = "<script>alert('Reserva Creada Exitosamente');
+                         window.location='index.php';
+                        </script>";
+            
+
+            
         }
+        
     
     } 
 
