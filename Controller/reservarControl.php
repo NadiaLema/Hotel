@@ -84,6 +84,8 @@
     
         }else{
 
+
+          
             $sentenciaR = $bd->prepare("INSERT INTO reserva(fecha_ingreso,nombre_cliente,fecha_salida,nombre_habitacion,habitacion_idhabitacion) VALUES (?,?,?,?,?);");
             $resultadoR = $sentenciaR->execute([$fecha_ingreso,$nombre,$fecha_salida,$nombre_habitacion,$idhabitacion]);
             $idreserva = $bd->lastInsertId();
@@ -106,5 +108,38 @@
     //echo $idCliente;
     //echo $idreserva;
     echo $mensaje;
+
+    
+          //funcion para enviar el correo electronico       
+          $destinatario = $email;
+          $asunto = "Solicitud de Reserva"; 
+          $cuerpo = '
+              <html> 
+                  <head> 
+                      <title>Hotel Mendoza</title> 
+                  </head>
+          
+                  <body> 
+                      <h1>Solicitud de contacto desde correo de prueba !  </h1>
+                      <p> 
+                          Contacto:'.$nombre . ' - ' . $asunto .'  <br>
+                          
+                          Mensaje: '.$mensaje.' 
+                      </p> 
+                  </body>
+              </html>
+          ';
+
+              //para el envío en formato HTML 
+              $headers = "MIME-Version: 1.0\r\n"; 
+              $headers .= "Content-type: text/html; charset=UTF8\r\n"; 
+
+              //dirección del remitente
+
+              $headers .= "FROM: Hotel Mendoza <$correo>\r\n";
+              mail($destinatario,$asunto,$cuerpo,$headers);
+
+              //echo "Correo enviado"; 
+
 
 ?>
