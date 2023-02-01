@@ -56,6 +56,8 @@ if (isset($_SESSION['id_admin'])) {
                     <th>
                     
                     <button  type="button"  name="cancelar" id="'<?php echo $dato->idreserva?>'" class=" btn btn-danger btn-sm cancelar" >Cancelar</button>
+                   
+                   
                     <!--<button type="button" name="borrar" id="'.$fila["idhabitacion"].'" class="btn btn-danger btn-xs borrar">Borrar</button>-->
                     <!--onclick="cancelar('<?php echo $dato->idreserva?>');"-->
                     </th>

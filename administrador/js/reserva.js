@@ -37,7 +37,7 @@ $(document).ready(function () {
         if(confirm("Esta seguro de cancelar esta reserva:" + id_reserva))
         {
             $.ajax({
-                url:"../Controller/cancelarreserva.php",
+                url:"./Controller/cancelarreserva.php",
                 method:"POST",
                 data:{id_reserva:id_reserva},
                 success:function(data)
