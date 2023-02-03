@@ -14,7 +14,9 @@ if(isset($_POST["id_reserva"]))
 	if(!empty($resultado))
 	{
 		echo 'Reserva Cancelada Exitosamente';
+		
 	}
+	
 }
 
 

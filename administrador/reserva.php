@@ -28,7 +28,7 @@ if (isset($_SESSION['id_admin'])) {
 
 
         <div class="">
-            <table id="datos_cliente"  class="display" style="width:100%">
+            <table id="datos_reserva"  class="display" style="width:100%">
                 <thead>
                     
                     <th>#id</th>
@@ -55,7 +55,7 @@ if (isset($_SESSION['id_admin'])) {
                     <th><?php echo $dato->nombre_habitacion ?></th>
                     <th>
                     
-                    <button  type="button"  name="cancelar" id="'<?php echo $dato->idreserva?>'" class=" btn btn-danger btn-sm cancelar" >Cancelar</button>
+                    <button  type="button"  name="cancelar" id="<?php echo $dato->idreserva ?>" class=" btn btn-danger btn-sm cancelar" >Cancelar</button>
                    
                    
                     <!--<button type="button" name="borrar" id="'.$fila["idhabitacion"].'" class="btn btn-danger btn-xs borrar">Borrar</button>-->

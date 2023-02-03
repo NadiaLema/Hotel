@@ -118,6 +118,15 @@
             $mensaje = "<script>window.location='index.php';</script>";
 
         } 
+            $mensaje = "<script>alert('Reserva Creada Exitosamente');
+                         window.location='index.php';
+                        </script>";
+            
+
+            
+        
+        
+    
     } 
 
     echo $mensaje;
