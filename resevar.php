@@ -55,6 +55,7 @@
             <div id="mensaje"></div>
             <form action="" id="form_ajax" method="post">
              <div class="row bg-light bg-gradient ">
+             <div style="font-size: 12px;" id="cantidad" class="text-danger"></div>
                 <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
                     <div class="col-md-6 mb-3">
                         <label>Fecha llegada</label>
@@ -376,7 +377,8 @@
                         $('#e_direccion').html('');
                         $('#e_provincia').html('');
                         $('#e_pais').html('');
-
+                        $('cantidad').html('');
+                        
                         $("#mensaje").html(data);
                     }
 
