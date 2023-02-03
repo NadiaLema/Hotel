@@ -23,7 +23,10 @@
                 <!--imagen de habitación-->
                 <div class="" >
                     
-                  <img class="rounded mx-auto d-block w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
+                  <!--<img class="rounded mx-auto d-block w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">-->
+                   <?php 
+                   echo'<img src="./administrador/img/'.$dato->imagen.'"   class="rounded mx-auto d-block w-50 h-50 " >';
+                   ?>
                    
                 </div>
 

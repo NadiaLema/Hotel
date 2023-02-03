@@ -100,6 +100,8 @@
     
         }else{
 
+
+          
             $sentenciaR = $bd->prepare("INSERT INTO reserva(fecha_ingreso,nombre_cliente,fecha_salida,nombre_habitacion,habitacion_idhabitacion) VALUES (?,?,?,?,?);");
             $resultadoR = $sentenciaR->execute([$fecha_ingreso,$nombre,$fecha_salida,$nombre_habitacion,$idhabitacion]);
             $idreserva = $bd->lastInsertId();
@@ -107,6 +109,7 @@
             $sentencia = $bd->prepare("INSERT INTO cliente(nombre_completo,direccion,provincia,pais,telefono,email,reserva_idreserva) VALUES (?,?,?,?,?,?,?);");
             $resultado= $sentencia->execute([$nombre,$dirreccion,$provincia,$pais,$telefono,$email,$idreserva]);
             // $idCliente = $bd->lastInsertId();
+<<<<<<< HEAD
 
             //Actualizo
             $resta = intval($datoCantOCP) + 1;
@@ -116,8 +119,52 @@
             $mensaje = "<script>window.location='index.php';</script>";
 
         } 
+=======
+            $mensaje = "<script>alert('Reserva Creada Exitosamente');
+                         window.location='index.php';
+                        </script>";
+            
+
+            
+        }
+        
+    
+>>>>>>> b387d8aa71fdb4e4541c16c93bceca99840992c7
     } 
 
     echo $mensaje;
+
+    
+          //funcion para enviar el correo electronico       
+          $destinatario = $email;
+          $asunto = "Solicitud de Reserva"; 
+          $cuerpo = '
+              <html> 
+                  <head> 
+                      <title>Hotel Mendoza</title> 
+                  </head>
+          
+                  <body> 
+                      <h1>Solicitud de contacto desde correo de prueba !  </h1>
+                      <p> 
+                          Contacto:'.$nombre . ' - ' . $asunto .'  <br>
+                          
+                          Mensaje: '.$mensaje.' 
+                      </p> 
+                  </body>
+              </html>
+          ';
+
+              //para el envío en formato HTML 
+              $headers = "MIME-Version: 1.0\r\n"; 
+              $headers .= "Content-type: text/html; charset=UTF8\r\n"; 
+
+              //dirección del remitente
+
+              $headers .= "FROM: Hotel Mendoza <$correo>\r\n";
+              mail($destinatario,$asunto,$cuerpo,$headers);
+
+              //echo "Correo enviado"; 
+
 
 ?>

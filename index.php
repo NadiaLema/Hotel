@@ -16,7 +16,7 @@ include 'Model/conexion_bd.php';
 
     <main>
         <section class="container section_1" id="nosotros">
-          <h3. class="section_1-title">"HOTEL MENDOZA"</h3>
+          <h3. class="section_1-title">"HOTELl MENDOZA"</h3>
             <div class="us">
                 <div class="us-text">
                  <div class="us-paragraph">
@@ -52,7 +52,12 @@ include 'Model/conexion_bd.php';
         <div class="card" >
             
             <div class="face front">
-                <img src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">
+                <?php 
+                echo'<img src="./administrador/img/'.$dato->imagen.'" >';
+                ?>
+              
+        
+              
                 <h3><?php echo $dato->tipo_habitacion ?></h3>
             </div>
             <div class="face back">
