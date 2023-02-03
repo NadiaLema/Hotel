@@ -151,9 +151,6 @@ $(document).ready(function(){
             $(document).on('click', '.borrar', function(){
                 var id_habitacion = $(this).attr("id");
 
-
-
-                
                 if(confirm("Esta seguro de borrar este registroo:" + id_habitacion))
                 {
                     $.ajax({

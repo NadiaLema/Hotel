@@ -109,17 +109,6 @@
             $sentencia = $bd->prepare("INSERT INTO cliente(nombre_completo,direccion,provincia,pais,telefono,email,reserva_idreserva) VALUES (?,?,?,?,?,?,?);");
             $resultado= $sentencia->execute([$nombre,$dirreccion,$provincia,$pais,$telefono,$email,$idreserva]);
             // $idCliente = $bd->lastInsertId();
-<<<<<<< HEAD
-
-            //Actualizo
-            $resta = intval($datoCantOCP) + 1;
-            $sentHabi = $bd->prepare("UPDATE habitacion SET catidad_ocupada = ? WHERE idhabitacion = ?");
-            $resultadoHab= $sentHabi->execute([$resta,$idhabitacion]);
-
-            $mensaje = "<script>window.location='index.php';</script>";
-
-        } 
-=======
             $mensaje = "<script>alert('Reserva Creada Exitosamente');
                          window.location='index.php';
                         </script>";
@@ -129,7 +118,6 @@
         }
         
     
->>>>>>> b387d8aa71fdb4e4541c16c93bceca99840992c7
     } 
 
     echo $mensaje;
