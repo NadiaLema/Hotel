@@ -142,12 +142,26 @@
                   </head>
           
                   <body> 
-                      <h1>Solicitud de contacto desde correo de prueba !  </h1>
+                      <h1>Reserva creada exitosamente</h1>
+                      <p>hola 
+                      Gracias '.$nombre.' por reservar con nosotros.Estos son los detalles de tu reserva:
+                      </p>
+                      <h3>Datos del Titular</h3>
                       <p> 
-                          Contacto:'.$nombre . ' - ' . $asunto .'  <br>
+                          Nombre:'.$nombre.'
+                          Teléfono:'.$telefono.'
+                          Dirección:'.$dirreccion.'
+                          Provincia:'.$provincia.'
+                          Pais:'.$pais.'
                           
-                          Mensaje: '.$mensaje.' 
                       </p> 
+                      <br>
+                      <h3>Acomodación</h3>
+                      <p>
+                        Habitación:
+                        Desde:'.$fecha_ingreso.'
+                        Hasta:'.$fecha_salida.'
+                      </p>
                   </body>
               </html>
           ';
