@@ -2,14 +2,24 @@
  <?php 
 session_start();
 include 'View/parte_superior.php';
-if (isset($_SESSION['id_admin'])) {
+/*if (isset($_SESSION['id_admin'])) {
     include 'Model/conexion.php'; 
     $sentencia = $conexion->query("SELECT * FROM reserva");
     $reserva = $sentencia->fetchAll(PDO::FETCH_OBJ);
 }else{
       echo "ERROR EN EL SISTEMA";
-}
+}*/
 
+if (!isset($_SESSION['id_admin'])) {
+    header('Location: login.php');
+  }elseif(isset($_SESSION['id_admin'])){
+      include 'Model/conexion.php';  
+      $sentencia = $conexion->query("SELECT * FROM reserva");
+      $reserva = $sentencia->fetchAll(PDO::FETCH_OBJ);
+      
+  }else{
+      echo "ERROR EN EL SISTEMA";
+  }
 ?>
 
 <?php
