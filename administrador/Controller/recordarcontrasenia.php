@@ -1,18 +1,23 @@
 <?php
-    include_once '../model/conexion.php';
+    include_once '../Model/conexion.php';
     $mensaje = null;
 
     
     
- if (isset($_POST["btn"]))
+ if (isset($_POST["ajaxR"]))
 {
     
-    
+    $usuario = $_POST['usuario'];
     $email = $_POST['email'];
     
 
-    $consulta = "SELECT * FROM admin WHERE email = ? ;";
-    $sentenciaMail = $bd->prepare($buscoMail);
+    $buscoUsu = "SELECT * FROM admin WHERE usuario = ? ;";
+    $sentenciaUsu = $conexion->prepare($buscoUsu);
+    $sentenciaUsu->execute(array($usuario));
+    $resultadoUsu = $sentenciaUsu->fetch();
+
+    $buscoMail = "SELECT * FROM admin WHERE email = ? ;";
+    $sentenciaMail = $conexion->prepare($buscoMail);
     $sentenciaMail->execute(array($email));
     $resultadoMail = $sentenciaMail->fetch();
 
@@ -38,17 +43,19 @@
 
     }else{
 
-        $consulta = $bd->query("SELECT password_ad FROM admin WHERE email = '".$email."'");
+        $consulta = $conexion->query("SELECT password_admin FROM admin WHERE email = '".$email."'");
         $contrasenia = $consulta->fetchAll(PDO::FETCH_OBJ);
         //print $contasenia;
 
         foreach ($contrasenia as $dato){
-            $contra = $dato->password_ad;
+            $contra = $dato->password_admin;
         }
 
         mail($email,"Recuperación de contraseña","Contraseña Adiministrador","USUARIO ".$usuario." SU CONTRASEÑA ES ".$contra);
 
-        $mensaje = "<script>window.location='loginA.php';</script>";
+        $mensaje = "<script>alert('Recibira un email con su contraseña');
+        window.location='login.php';
+       </script>";
 
         }
 

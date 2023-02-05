@@ -44,7 +44,7 @@ session_start();
             <div class="d-flex left-content-around mt-1">
 
                 <div class="pt-1 ">
-                    <a href="recuperarA.php" class="text-decoration-none text-primary fw-semibold fst-italic text"
+                    <a href="recuperar_contrasenia.php" class="text-decoration-none text-primary fw-semibold fst-italic text"
                         style="font-size: 0.8rem">¿Ovidaste tu contraseña?</a>
                 </div>
             </div>
