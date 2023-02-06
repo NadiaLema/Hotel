@@ -5,6 +5,7 @@
     $resultado = null;
     $idCliente = null;
     $idreserva = null;
+    $suma = null;
 
     if (isset($_POST["ajax"])) {
 
@@ -24,14 +25,14 @@
         $resultadoCant = $bd->prepare($sentCant);
         $resultadoCant->execute(array());
         $datoCant = $resultadoCant->fetchColumn();
-        //echo $datoCant;
+       // echo $datoCant;
 
-        $sentCantOCP = "SELECT SUM(catidad_ocupada) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
+        $sentCantOCP = "SELECT SUM(cantidad_ocupada) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
         $resultadoCantOCP = $bd->prepare($sentCantOCP);
         $resultadoCantOCP->execute(array());
         $datoCantOCP = $resultadoCantOCP->fetchColumn();
-        //echo $datoCantOCP;
-       /*
+       // echo $datoCantOCP;
+       
         $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
         $sentenciaFI->execute(array($fecha_ingreso));
@@ -42,10 +43,10 @@
         $sentenciaFS = $bd->prepare($buscoFechaSalida);
         $sentenciaFS->execute(array($fecha_salida));
         $resultadoFS = $sentenciaFS->fetch();
-       */
+       
         //$mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
 
-        if ($fecha_ingreso >= $resultadoFI && $fecha_salida <= $resultadoFS) {
+        if ($datoCant == $datoCantOCP) {
             $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
             
         }else if ($fecha_ingreso == "") {
@@ -106,71 +107,65 @@
             // $idCliente = $bd->lastInsertId();
 
             //Actualizo
-            $resta = intval($datoCantOCP) + 1;
-            $sentHabi = $bd->prepare("UPDATE habitacion SET catidad_ocupada = ? WHERE idhabitacion = ?");
-            $resultadoHab= $sentHabi->execute([$resta,$idhabitacion]);
+            $suma = intval($datoCantOCP) + 1;
+            echo $suma;
+            $sentHabi = $bd->prepare("UPDATE habitacion SET cantidad_ocupada = ? WHERE idhabitacion = ?");
+            $resultadoHab = $sentHabi->execute([$suma,$idhabitacion]);
 
-            $mensaje = "<script>window.location='index.php';</script>";
-
-        } 
             $mensaje = "<script>alert('Reserva Creada Exitosamente');
                          window.location='index.php';
                         </script>";
-            
 
+              //funcion para enviar el correo electronico       
+            $destinatario = $email;
+            $asunto = "Solicitud de Reserva"; 
+            $cuerpo = '
+                <html> 
+                    <head> 
+                        <title>Hotel Mendoza</title> 
+                    </head>
             
-        
-        
-    
+                    <body> 
+                        <h1>Reserva creada exitosamente</h1>
+                        <p>hola 
+                        Gracias '.$nombre.' por reservar con nosotros.Estos son los detalles de tu reserva:
+                        </p>
+                        <h3>Datos del Titular</h3>
+                        <p> 
+                            Nombre:'.$nombre.'
+                            Teléfono:'.$telefono.'
+                            Dirección:'.$dirreccion.'
+                            Provincia:'.$provincia.'
+                            Pais:'.$pais.'
+                            
+                        </p> 
+                        <br>
+                        <h3>Acomodación</h3>
+                        <p>
+                            Habitación:
+                            Desde:'.$fecha_ingreso.'
+                            Hasta:'.$fecha_salida.'
+                        </p>
+                    </body>
+                </html>
+            ';
+
+                //para el envío en formato HTML 
+                $headers = "MIME-Version: 1.0\r\n"; 
+                $headers .= "Content-type: text/html; charset=UTF8\r\n"; 
+
+                //dirección del remitente
+
+                $headers .= "FROM: Hotel Mendoza <$email>\r\n";
+                mail($destinatario,$asunto,$cuerpo,$headers);
+
+                //echo "Correo enviado"; 
+
+        } 
+            
     } 
 
     echo $mensaje;
-
-    
-          //funcion para enviar el correo electronico       
-          $destinatario = $email;
-          $asunto = "Solicitud de Reserva"; 
-          $cuerpo = '
-              <html> 
-                  <head> 
-                      <title>Hotel Mendoza</title> 
-                  </head>
-          
-                  <body> 
-                      <h1>Reserva creada exitosamente</h1>
-                      <p>hola 
-                      Gracias '.$nombre.' por reservar con nosotros.Estos son los detalles de tu reserva:
-                      </p>
-                      <h3>Datos del Titular</h3>
-                      <p> 
-                          Nombre:'.$nombre.'
-                          Teléfono:'.$telefono.'
-                          Dirección:'.$dirreccion.'
-                          Provincia:'.$provincia.'
-                          Pais:'.$pais.'
-                          
-                      </p> 
-                      <br>
-                      <h3>Acomodación</h3>
-                      <p>
-                        Habitación:
-                        Desde:'.$fecha_ingreso.'
-                        Hasta:'.$fecha_salida.'
-                      </p>
-                  </body>
-              </html>
-          ';
-
-              //para el envío en formato HTML 
-              $headers = "MIME-Version: 1.0\r\n"; 
-              $headers .= "Content-type: text/html; charset=UTF8\r\n"; 
-
-              //dirección del remitente
-
-              $headers .= "FROM: Hotel Mendoza <$correo>\r\n";
-              mail($destinatario,$asunto,$cuerpo,$headers);
-
-              //echo "Correo enviado"; 
 
 
 ?>
