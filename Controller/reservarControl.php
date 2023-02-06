@@ -31,7 +31,7 @@
         $resultadoCantOCP->execute(array());
         $datoCantOCP = $resultadoCantOCP->fetchColumn();
         //echo $datoCantOCP;
-
+       
         $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
         $sentenciaFI->execute(array($fecha_ingreso));
