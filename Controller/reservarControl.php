@@ -135,19 +135,19 @@
                         </p>
                         <h3>Datos del Titular</h3>
                         <p> 
-                            Nombre:'.$nombre.'
-                            Teléfono:'.$telefono.'
-                            Dirección:'.$dirreccion.'
-                            Provincia:'.$provincia.'
-                            Pais:'.$pais.'
+                            Nombre:'.$nombre.' <br>
+                            Teléfono:'.$telefono.'<br>
+                            Dirección:'.$dirreccion.'<br>
+                            Provincia:'.$provincia.'<br>
+                            Pais:'.$pais.'<br>
                             
                         </p> 
-                        <br>
-                        <h3>Acomodación</h3>
+                        
+                        <h3>Datos de Hospedaje</h3>
                         <p>
-                            Habitación:
-                            Desde:'.$fecha_ingreso.'
-                            Hasta:'.$fecha_salida.'
+                            Habitación:'.$nombre_habitacion.'<br>
+                            Desde:'.$fecha_ingreso.'<br>
+                            Hasta:'.$fecha_salida.'<br>
                         </p>
                     </body>
                 </html>
