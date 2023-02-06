@@ -19,41 +19,8 @@
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
 
-        //Obtengo cantidad de habitaciones
-        $sentCant = "SELECT SUM(cantidad) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
-        $resultadoCant = $bd->prepare($sentCant);
-        $resultadoCant->execute(array());
-        $datoCant = $resultadoCant->fetchColumn();
-        //echo $datoCant;
 
-        $sentCantOCP = "SELECT SUM(catidad_ocupada) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
-        $resultadoCantOCP = $bd->prepare($sentCantOCP);
-        $resultadoCantOCP->execute(array());
-        $datoCantOCP = $resultadoCantOCP->fetchColumn();
-        //echo $datoCantOCP;
-       
-        $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
-        $sentenciaFI = $bd->prepare($buscoFechaIngreso);
-        $sentenciaFI->execute(array($fecha_ingreso));
-        $resultadoFI = $sentenciaFI->fetch();
-
-        $buscoFechaSalida ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
-        $sentenciaFS = $bd->prepare($buscoFechaSalida);
-        $sentenciaFS->execute(array($fecha_salida));
-        $resultadoFS = $sentenciaFS->fetch();
-        
-
-        $buscoFechaSalida ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
-        $sentenciaFS = $bd->prepare($buscoFechaSalida);
-        $sentenciaFS->execute(array($fecha_salida));
-        $resultadoFS = $sentenciaFS->fetch();
-       
-        //$mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
-
-        if ($fecha_ingreso >= $resultadoFI && $fecha_salida <= $resultadoFS) {
-            $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
-            
-        }else if ($fecha_ingreso == "") {
+        if ($fecha_ingreso == "") {
             $mensaje = "<script>document.getElementById('e_ingreso').innerHTML='Ingrese fecha.';</script>";
             
         }else if ($fecha_salida == "") {
@@ -109,24 +76,15 @@
             $sentencia = $bd->prepare("INSERT INTO cliente(nombre_completo,direccion,provincia,pais,telefono,email,reserva_idreserva) VALUES (?,?,?,?,?,?,?);");
             $resultado= $sentencia->execute([$nombre,$dirreccion,$provincia,$pais,$telefono,$email,$idreserva]);
             // $idCliente = $bd->lastInsertId();
-
-            //Actualizo
-            $resta = intval($datoCantOCP) + 1;
-            $sentHabi = $bd->prepare("UPDATE habitacion SET catidad_ocupada = ? WHERE idhabitacion = ?");
-            $resultadoHab= $sentHabi->execute([$resta,$idhabitacion]);
-
-            $mensaje = "<script>window.location='index.php';</script>";
+           
+            $mensaje = "<script>alert('Reserva Creada Exitosamente');
+            window.location='index.php';
+           </script>";
 
         } 
-            $mensaje = "<script>alert('Reserva Creada Exitosamente');
-                         window.location='index.php';
-                        </script>";
-            
+          
+       
 
-            
-        
-        
-    
     } 
 
     echo $mensaje;
@@ -148,19 +106,19 @@
                       </p>
                       <h3>Datos del Titular</h3>
                       <p> 
-                          Nombre:'.$nombre.'
-                          Teléfono:'.$telefono.'
-                          Dirección:'.$dirreccion.'
-                          Provincia:'.$provincia.'
-                          Pais:'.$pais.'
+                          Nombre:'.$nombre.'<br>
+                          Teléfono:'.$telefono.'<br>
+                          Dirección:'.$dirreccion.'<br>
+                          Provincia:'.$provincia.'<br>
+                          Pais:'.$pais.'<br>
                           
                       </p> 
-                      <br>
-                      <h3>Acomodación</h3>
+                      
+                      <h3>Datos de Hospedaje</h3>
                       <p>
-                        Habitación:
-                        Desde:'.$fecha_ingreso.'
-                        Hasta:'.$fecha_salida.'
+                        Habitación:'.$nombre_habitacion.' <br>
+                        Desde:'.$fecha_ingreso.'<br>
+                        Hasta:'.$fecha_salida.'<br>
                       </p>
                   </body>
               </html>
@@ -172,7 +130,7 @@
 
               //dirección del remitente
 
-              $headers .= "FROM: Hotel Mendoza <$correo>\r\n";
+              $headers .= "FROM: Hotel Mendoza <$email>\r\n";
               mail($destinatario,$asunto,$cuerpo,$headers);
 
               //echo "Correo enviado"; 
