@@ -50,7 +50,7 @@
         if ($fecha_ingreso >= $resultadoFI && $fecha_salida <= $resultadoFS) {
             $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
             
-        }else*/ if ($fecha_ingreso == "") {
+        }else if ($fecha_ingreso == "") {
             $mensaje = "<script>document.getElementById('e_ingreso').innerHTML='Ingrese fecha.';</script>";
             
         }else if ($fecha_salida == "") {
