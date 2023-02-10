@@ -49,7 +49,7 @@
         $resultadoFS = $sentenciaFS->fetch();
        
         //$mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
-
+        
         if ($fecha_ingreso >= $resultadoFI && $fecha_salida <= $resultadoFS) {
             $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
             
