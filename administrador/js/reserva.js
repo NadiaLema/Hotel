@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    
+/*$(document).ready(function(){
+    /*
     //estructura de plantilla de datatables
     var datatableR = $('#datos_reserva').DataTable({
         "processing":true,
@@ -42,13 +42,13 @@ $(document).ready(function(){
                 if(confirm("Esta seguro de borrar este registroo:" + id_reserva))
                 {
                     $.ajax({
-                        url:".../Controller/cancelarreserva.php",
+                        url:"../Controller/cancelarreserva.php",
                         method:"POST",
                         data:{id_reserva:id_reserva},
                         success:function(data)
                         {
                             alert(data);
-                            datatableR.ajax.reload();
+                            $('#datos_reserva').load('reserva.php');
                         }
                     });
                 }
@@ -59,7 +59,7 @@ $(document).ready(function(){
             });
 });          
         
-   
+ 
 
 
 
@@ -122,8 +122,17 @@ $(document).ready(function () {
 
 */
 
-            
-
+function confirmacion(e){
+    if(confirm("¿Está seguro que desea eliminar este registro?")){
+        return true;
+    } else {
+        e.preventDefault();
+    }
+}       
+let cancelar = document.querySelectorAll(".cancelar");
+for(var i = 0; i < cancelar.length;i++){
+    cancelar[i].addEventListener('click',confirmacion);
+} 
 
     
 
