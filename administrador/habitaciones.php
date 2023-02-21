@@ -19,7 +19,7 @@ if (!isset($_SESSION['id_admin'])) {
 
 ?>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 <!-- Page content-->
     <div class="container-fluid">
        <h3 class="text-center">Habitaciones</h3>
@@ -101,5 +101,5 @@ if (!isset($_SESSION['id_admin'])) {
       </div>     
   </div>
 </div>
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <?php include "./View/parte_inferior.php"?>

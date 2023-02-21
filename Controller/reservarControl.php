@@ -20,7 +20,7 @@
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
 
-        /*
+        
         //Obtengo cantidad de habitaciones
         $sentCant = "SELECT SUM(cantidad) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
         $resultadoCant = $bd->prepare($sentCant);
@@ -33,7 +33,9 @@
         $resultadoCantOCP->execute(array());
         $datoCantOCP = $resultadoCantOCP->fetchColumn();
        // echo $datoCantOCP;
-       */
+
+       
+       
         $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
         $sentenciaFI->execute(array($fecha_ingreso));
@@ -45,12 +47,12 @@
         $sentenciaFS->execute(array($fecha_salida));
         $resultadoFS = $sentenciaFS->fetch();
        
-        //$mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
+       // $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
 
-       /* if ($datoCant == $datoCantOCP) {
+        if ($datoCant == $datoCantOCP) {
             $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
             
-        }else*/ if ($fecha_ingreso == "") {
+        }else if ($fecha_ingreso == "") {
             $mensaje = "<script>document.getElementById('e_ingreso').innerHTML='Ingrese fecha.';</script>";
             
         }else if ($fecha_salida == "") {
@@ -108,12 +110,12 @@
             // $idCliente = $bd->lastInsertId();
 
             //Actualizo
-            /*
+            
             $suma = intval($datoCantOCP) + 1;
             //echo $suma;
             $sentHabi = $bd->prepare("UPDATE habitacion SET cantidad_ocupada = ? WHERE idhabitacion = ?");
             $resultadoHab = $sentHabi->execute([$suma,$idhabitacion]);
-            */
+            
 
             $mensaje = "<script>alert('Reserva Creada Exitosamente');
                          window.location='index.php';

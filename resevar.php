@@ -55,16 +55,17 @@
             <div id="mensaje"></div>
             <form action="" id="form_ajax" method="post">
              <div class="row bg-light bg-gradient ">
+             <!--error de candidad S-->   
              <div style="font-size: 12px;" id="cantidad" class="text-danger"></div>
                 <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
                     <div class="col-md-6 mb-3">
                         <label>Fecha llegada</label>
-                        <input type="date" class="form-control text-secondary" name="fecha_ingreso" >
+                        <input type="date" class="form-control text-secondary" name="fecha_ingreso" min="<?= date('Y-m-d',strtotime(date('Y-m-d'))) ?>" >
                         <div style="font-size: 12px;" id="e_ingreso" class="text-danger"></div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Fecha salida</label>
-                        <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida" placeholder="Another input">
+                        <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida"  min="<?= date('Y-m-d',strtotime(date('Y-m-d')."+1 days")) ?>"  placeholder="Another input">
                         <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
                     </div>
                     <!--
