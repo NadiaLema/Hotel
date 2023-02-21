@@ -47,9 +47,15 @@
         $sentenciaFS->execute(array($fecha_salida));
         $resultadoFS = $sentenciaFS->fetch();
        
+<<<<<<< HEAD
        // $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
 
         if ($datoCant == $datoCantOCP) {
+=======
+        //$mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
+        
+        if ($fecha_ingreso >= $resultadoFI && $fecha_salida <= $resultadoFS) {
+>>>>>>> ec6955025874328e489c29d067e7557e5a6b27c5
             $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
             
         }else if ($fecha_ingreso == "") {
