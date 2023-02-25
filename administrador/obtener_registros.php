@@ -43,6 +43,7 @@
         $sub_array[] = $fila["descripcion"];
         $sub_array[] = $imagen;
         $sub_array[] = $fila["precio"];
+        $sub_array[] = $fila["cantidad"];
         $sub_array[] = '<button type="button" name="editar" id="'.$fila["idhabitacion"].'" class="btn btn-primary  btn-xs editar">Editar</button>';
         $sub_array[] = '<button type="button" name="borrar" id="'.$fila["idhabitacion"].'" class="btn btn-danger btn-xs borrar">Borrar</button>';
         $datos[] = $sub_array;

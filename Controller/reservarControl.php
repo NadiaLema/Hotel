@@ -42,7 +42,7 @@
         $resultadoFI = $sentenciaFI->fetch();
 
    
-        $buscoFechaSalida ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
+        $buscoFechaSalida ="SELECT * FROM reserva INNER JOIN habitacion ON habitacion.idhabitacion = reserva.habitacion_idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
         $sentenciaFS = $bd->prepare($buscoFechaSalida);
         $sentenciaFS->execute(array($fecha_salida));
         $resultadoFS = $sentenciaFS->fetch();

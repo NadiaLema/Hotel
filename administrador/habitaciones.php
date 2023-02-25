@@ -47,6 +47,7 @@ if (!isset($_SESSION['id_admin'])) {
                         <th>Descripcion</th>
                         <th>Imagen</th>
                         <th>Precio</th>
+                        <th>Cantidad</th>
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
@@ -88,6 +89,12 @@ if (!isset($_SESSION['id_admin'])) {
                     <label for="apellidos">Ingrese Precio</label>
                     <input type="text" name="precio" id="precio" class="form-control">
                     <br />
+
+                    <label for="apellidos">Ingrese Cantidad</label>
+                    <input type="number" name="cantidad" id="cantidad" class="form-control">
+                    <br />
+
+
 
                 </div>
 

@@ -56,7 +56,7 @@ $(document).ready(function(){
         var nombre = $('#nombre').val();
         var descripcion = $('#descripcion').val();
         var precio = $('#precio').val();
-       
+        var cantidad = $('#cantidad').val();
         var extension = $('#imagen_habitacion').val().split('.').pop().toLowerCase();
         if(extension != '')
         {
@@ -95,6 +95,11 @@ $(document).ready(function(){
                     swal("Error!", "Solo se permiten numeros naturales y/o decimales", "error");
                     $('#precio').focus();
                     return false;
+                }else if (cantidad.trim() == ''){
+                    swal("Error!", "Por favor ingrese Cantidad !", "error");
+                $("#cantidad").focus();
+                return false;
+
                 }else{
                     $.ajax({
                         url:"crear.php",
@@ -132,6 +137,7 @@ $(document).ready(function(){
                         $('#nombre').val(data.nombre);
                         $('#descripcion').val(data.descripcion);
                         $('#precio').val(data.precio);
+                        $('#cantidad').val(data.cantidad);
                         $('.modal-title').text("Editar Habitación");
                         $('#id_habitacion').val(id_habitacion);
                         $('#imagen_subida').html(data.imagen_habitacion);

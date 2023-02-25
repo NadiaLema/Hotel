@@ -2,13 +2,7 @@
  <?php 
 session_start();
 include 'View/parte_superior.php';
-/*if (isset($_SESSION['id_admin'])) {
-    include 'Model/conexion.php'; 
-    $sentencia = $conexion->query("SELECT * FROM reserva");
-    $reserva = $sentencia->fetchAll(PDO::FETCH_OBJ);
-}else{
-      echo "ERROR EN EL SISTEMA";
-}*/
+
 
 if (!isset($_SESSION['id_admin'])) {
     header('Location: login.php');
@@ -30,7 +24,7 @@ if (!isset($_SESSION['id_admin'])) {
 
 
         <div class="">
-            <table id="datos_reserva"  class="display" style="width:100%">
+            <table id="datos_reserva"  class="table-primary" style="width:100%">
                 <thead>
                     
                     <th>#id</th>
