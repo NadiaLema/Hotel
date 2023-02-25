@@ -1,7 +1,7 @@
 <?php
 
 include '../Model/conexion.php';
-
+/*
 $id = $_POST['id'];
 
 $sentencia = $conexion->prepare("DELETE FROM reserva WHERE idreserva = ?;");
@@ -13,7 +13,7 @@ if ($resultado === TRUE) {
 } 
 
 
-/*
+´*/
 $id= null;
 $id = $_POST['id'];
 $stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = '$id'");
@@ -30,7 +30,7 @@ if(!empty($resultado))
 
 	
 
-
+/*
 if(isset($_POST["id"]))
 {
 
