@@ -1,3 +1,12 @@
+function preguntar($idreserva)
+{
+    if(confirm('¿Estás seguro que deseas borrar?'))
+    {
+        window.location.href = "Controller/cancelarreserva.php?del="+ $idreserva;
+    }
+}
+
+/*
 $(document).ready(function(){
     
     //estructura de plantilla de datatables
@@ -28,11 +37,12 @@ $(document).ready(function(){
     });
     
    
-
+ 
 
 
 
     //Funcionalida de borrar
+/*
             $(document).on('click', '.cancelar', function(){
                 var id_reserva = $(this).attr("id");
 
@@ -82,4 +92,4 @@ for(var i = 0; i < cancelar.length;i++){
     
     
 
-
+*/

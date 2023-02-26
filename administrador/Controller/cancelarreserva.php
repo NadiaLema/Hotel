@@ -1,6 +1,24 @@
 <?php
 
 include '../Model/conexion.php';
+
+$stmt= null;
+$resultado= null;
+
+
+if(isset($_POST['del']))
+{
+	$idreserva=$_POST['del']
+	$stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = '$idreserva'");
+	$stmt->bindParam(':idreserva', $idreserva, PDO::PARAM_INT);
+	$resultado = $stmt->execute();
+	header("location_reserva.php");
+}
+
+
+
+
+/*
 /*
 $id = $_POST['id'];
 
@@ -13,7 +31,8 @@ if ($resultado === TRUE) {
 } 
 
 
-´*/
+*/
+/*
 $id= null;
 $id = $_POST['id'];
 $stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = '$id'");

@@ -51,9 +51,8 @@ if (!isset($_SESSION['id_admin'])) {
                     <th><?php echo $dato->nombre_habitacion ?></th>
                     <th>
                     
-                    <!--<button  type="button"  name="cancelar" id="<?php echo $dato->idreserva ?>" class=" btn btn-danger btn-sm cancelar" >Cancelar</button>-->
-                    <a href="Controller/cancelarreserva.php?id=<?php echo $dato->idreserva; ?>" class=" btn btn-danger btn-sm cancelar">Cancelar</a>
-                   
+                    <a href="#'" onclick="preguntar(<?php echo $dato->idreserva; ?>)" class=" btn btn-danger btn-sm cancelar">Cancelar</a>
+                  
                     </th>
                     </tr>
                     <?php
@@ -67,7 +66,7 @@ if (!isset($_SESSION['id_admin'])) {
        
     
 
-</div>
+</div>/*
 
 
 
