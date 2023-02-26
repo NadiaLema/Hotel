@@ -64,7 +64,7 @@ $(document).ready(function(){
 
 
 
-/*
+
 function confirmacion(e){
     if(confirm("¿Está seguro que desea eliminar este registro?")){
         return true;
@@ -76,7 +76,7 @@ let cancelar = document.querySelectorAll(".cancelar");
 for(var i = 0; i < cancelar.length;i++){
     cancelar[i].addEventListener('click',confirmacion);
 } 
-*/
+
     
 
     

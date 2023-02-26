@@ -96,7 +96,7 @@
                         data: $("#form_ajax").serialize(),
                         success: function(data)
                         {
-                            //para que se me borren los alertas cuando el campo cumplte las condiciones
+                            //para que se me borren los alertas cuando el campo cumplete las condiciones
                             
                            
 
