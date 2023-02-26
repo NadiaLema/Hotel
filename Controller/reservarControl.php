@@ -5,6 +5,7 @@
     $resultado = null;
     $idCliente = null;
     $idreserva = null;
+    $resultadoF = null;
     $suma = null;
 
     if (isset($_POST["ajax"])) {
@@ -20,39 +21,47 @@
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
 
-        
-        //Obtengo cantidad de habitaciones
-        $sentCant = "SELECT SUM(cantidad) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
-        $resultadoCant = $bd->prepare($sentCant);
-        $resultadoCant->execute(array());
-        $datoCant = $resultadoCant->fetchColumn();
-       // echo $datoCant;
-
-        $sentCantOCP = "SELECT SUM(cantidad_ocupada) FROM habitacion WHERE idhabitacion = '".$idhabitacion."'";
-        $resultadoCantOCP = $bd->prepare($sentCantOCP);
-        $resultadoCantOCP->execute(array());
-        $datoCantOCP = $resultadoCantOCP->fetchColumn();
-       // echo $datoCantOCP;
-
-       
-       
-        $buscoFechaIngreso ="SELECT * FROM reserva INNER JOIN habitacion ON reserva.habitacion_idhabitacion = habitacion.idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
+        $buscoFechaIngreso =   "SELECT * FROM reserva
+        WHERE habitacion_idhabitacion  AND 
+        ('$fecha_ingreso' BETWEEN fecha_ingreso AND fecha_salida)
+        OR 
+        ('$fecha_salida' BETWEEN fecha_ingreso AND fecha_salida)
+        OR
+        (fecha_ingreso <= '$fecha_ingreso' AND fecha_salida >= '$fecha_salida')";
+      
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
         $sentenciaFI->execute(array($fecha_ingreso));
-        $resultadoFI = $sentenciaFI->fetch();
+        $resultadoFI = $sentenciaFI->fetchColumn();
+        if ($resultadoFI){
+            if($resultadoFI > 0)
+            {
+               echo '<div id="Error"></div>';
+               echo "<script type=''>alert('Ya existe una fecha agregada $fecha_ingreso para el municipio de $idhabitacion');</script>";
+             }else{
+               echo "";
+            }   
+        }
+        echo  $resultadoFI;
 
-   
-        $buscoFechaSalida ="SELECT * FROM reserva INNER JOIN habitacion ON habitacion.idhabitacion = reserva.habitacion_idhabitacion WHERE reserva.fecha_ingreso = ? AND reserva.habitacion_idhabitacion = '".$idhabitacion."';";
-        $sentenciaFS = $bd->prepare($buscoFechaSalida);
-        $sentenciaFS->execute(array($fecha_salida));
-        $resultadoFS = $sentenciaFS->fetch();
-       
-       // $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
-
-        if ($datoCant == $datoCantOCP) {
-            $mensaje = "<script>document.getElementById('cantidad').innerHTML='No hay habitaciones disponibles.';</script>";
-            
-        }else if ($fecha_ingreso == "") {
+/*
+        $buscoFechaIngreso =   "SELECT fecha_ingreso FROM reserva
+        WHERE fecha_ingreso = '$fecha_ingreso' and habitacion_idhabitacion =  '$idhabitacion'";
+        $sentenciaFI = $bd->prepare($buscoFechaIngreso);
+        $sentenciaFI->execute(array($fecha_ingreso));
+        $resultadoFI = $sentenciaFI->fetchColumn();
+        if (!empty($fecha_ingreso)){
+            if($resultadoFI > 0)
+            {
+               echo '<div id="Error"></div>';
+               echo "<script type=''>alert('Ya existe una fecha agregada $fecha_ingreso para el municipio de $idhabitacion');</script>";
+             }else{
+               echo "";
+            }   
+        }
+        echo  $resultadoFI;
+        
+*/
+        if ($fecha_ingreso == "") {
             $mensaje = "<script>document.getElementById('e_ingreso').innerHTML='Ingrese fecha.';</script>";
             
         }else if ($fecha_salida == "") {
@@ -109,14 +118,14 @@
             $resultado= $sentencia->execute([$nombre,$dirreccion,$provincia,$pais,$telefono,$email,$idreserva]);
             // $idCliente = $bd->lastInsertId();
 
-            //Actualizo
+            /*Actualizo
             
             $suma = intval($datoCantOCP) + 1;
             //echo $suma;
             $sentHabi = $bd->prepare("UPDATE habitacion SET cantidad_ocupada = ? WHERE idhabitacion = ?");
             $resultadoHab = $sentHabi->execute([$suma,$idhabitacion]);
             
-
+            */
             $mensaje = "<script>alert('Reserva Creada Exitosamente');
                          window.location='index.php';
                         </script>";

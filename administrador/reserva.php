@@ -4,6 +4,8 @@ session_start();
 include 'View/parte_superior.php';
 
 
+
+
 if (!isset($_SESSION['id_admin'])) {
     header('Location: login.php');
   }elseif(isset($_SESSION['id_admin'])){
@@ -16,14 +18,33 @@ if (!isset($_SESSION['id_admin'])) {
   }
 ?>
 
+<?php 
+include_once "Controller/cancelarreserva.php";
+$sqlite = new sqlite();
+
+?>
 
 <!-- Page content-->
     <div class="container-fluid">
        <h3 class="text-center">Reserva</h3>
-       
+        
 
 
         <div class="">
+        <?php
+                    if(isset($_REQUEST['idBorrar'])){
+                        $res=$sqlite->borrar($_REQUEST['idBorrar']);
+                        ?>
+                            <div class="alert alert-<?php echo $res?"primary":"danger"; ?> alert-dismissible fade show" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                                <?php echo $res?"Registro borrado":"Registro no borrado"; ?>
+                            </div>
+                        <?php
+                    }
+        ?>
             <table id="datos_reserva"  class="table-primary" style="width:100%">
                 <thead>
                     
@@ -50,8 +71,8 @@ if (!isset($_SESSION['id_admin'])) {
                     <td><?php echo $dato->fecha_salida ?></td>
                     <th><?php echo $dato->nombre_habitacion ?></th>
                     <th>
+                    <a href="reserva.php?idBorrar=<?php echo $dato->idreserva; ?>"  class="cancelar btn-danger btn-sm cancelar">Cancelar></a>
                     
-                    <a href="#'" onclick="preguntar(<?php echo $dato->idreserva; ?>)" class=" btn btn-danger btn-sm cancelar">Cancelar</a>
                   
                     </th>
                     </tr>

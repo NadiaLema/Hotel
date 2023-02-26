@@ -1,25 +1,112 @@
 <?php
+include 'Model/conexion.php';
+/*
+$id = ($_GET['id']);
+$sql = 
 
-include '../Model/conexion.php';
+*/
 
+$sentecia = null;
+class sqlite {
+	function borrar($idreserva){
+		include 'Model/conexion.php';
+		$query="DELETE FROM reserva WHERE idreserva=:idreserva";
+		$sentecia= $conexion->prepare($query);
+		$sentecia->bindParam(':idreserva',$idreserva);
+		if($sentecia->execute()==true){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+}
+
+
+
+/*
 $stmt= null;
 $resultado= null;
 
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['del']));	
+				   
+	$id =$_POST['del'];	 
+	
+	$sql = "DELETE FROM `reserva` WHERE idreserva = '$id'";
+	$stmt = $conexion->prepare($sql);
+	//$stmt->bindParam(':id', $id);
+	$stmt->execute();
+	header('Location:../reserva.php');
+
+
+
+    $id = $_POST['del'];
+
+	$stmt = "DELETE FROM  reserva WHERE idreserva = :id";
+	$stmt->bindParam(':id', $id);
+	
+	
+	if(isset($_POST['del'])) { 
+	  $id = $_POST['id']; 
+	  $stmt->execute();
+	  header('Location: ../../reserva.php');
+	}
+
+
+
+
 
 if(isset($_POST['del']))
+
 {
-	$idreserva=$_POST['del']
+	$id = $_POST['del'];
+
+	$stmt = "DELETE FROM  reserva WHERE idreserva = :id";
+	$stmt->bindParam(':id', $id);
+	
+	
+	if(isset($_POST['btn_delete'])) { 
+	  $id = $_GET['id']; 
+	  $stmt->execute();
+	  header('Location: ../../users.php');
+	}
+
+
+
+
+	$idreserva=$_POST['del'];
+	$stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = :idreserva");
+	$resultado = $stmt->execute(
+		array(
+			':idreserva'=>	$_POST["$idreserva"]
+		)
+	);
+	if(!empty($resultado))
+	{
+		echo 'Reserva Cancelada Exitosamente';
+		
+	}
+
+
+
+	
+	$idreserva=$_POST['del'];
 	$stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = '$idreserva'");
-	$stmt->bindParam(':idreserva', $idreserva, PDO::PARAM_INT);
-	$resultado = $stmt->execute();
-	header("location_reserva.php");
+	$resultado = $stmt->execute($stmt);
+
+	if ($resultado === TRUE) {
+	
+		header('Location:../reserva.php');
+	}
+
+	
 }
 
 
 
 
-/*
-/*
+
+
 $id = $_POST['id'];
 
 $sentencia = $conexion->prepare("DELETE FROM reserva WHERE idreserva = ?;");
@@ -31,8 +118,8 @@ if ($resultado === TRUE) {
 } 
 
 
-*/
-/*
+
+
 $id= null;
 $id = $_POST['id'];
 $stmt = $conexion->prepare("DELETE FROM reserva WHERE idreserva = '$id'");
@@ -49,7 +136,7 @@ if(!empty($resultado))
 
 	
 
-/*
+
 if(isset($_POST["id"]))
 {
 
@@ -66,7 +153,6 @@ if(isset($_POST["id"]))
 	}
 	
 }
+
 */
 
-
-?>

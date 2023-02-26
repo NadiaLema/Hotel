@@ -1,3 +1,15 @@
+$(document).ready(function () {
+    $(".cancelar").click(function (e) { 
+        e.preventDefault();
+        var res=confirm("Realmente desea borrar el registro?");
+        if(res==true){
+            location.href=$(this).attr("href");
+        }
+    });
+});
+
+
+/*
 function preguntar($idreserva)
 {
     if(confirm('¿Estás seguro que deseas borrar?'))
@@ -6,7 +18,7 @@ function preguntar($idreserva)
     }
 }
 
-/*
+
 $(document).ready(function(){
     
     //estructura de plantilla de datatables

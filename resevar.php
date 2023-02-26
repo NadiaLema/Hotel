@@ -65,14 +65,14 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label>Fecha salida</label>
-                        <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida"  min="<?= date('Y-m-d',strtotime(date('Y-m-d')."+1 days")) ?>"  placeholder="Another input">
+                        <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida"  min="<?= date('Y-m-d',strtotime(date('Y-m-d'))) ?>"  placeholder="Another input">
                         <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
                     </div>
                     <!--
                     <div class="mb-3">                   
                     <input type="button" id="btn_ajaxF" class="btn btn-dark center-block col-sm-5 mt-2 mb-1" name="consultar" value="Consultar disponibilidad"></input>
                     </div>   
-                        -->                
+                    -->                
                 </div>
                                       
                 <div class="row">

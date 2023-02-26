@@ -2,26 +2,7 @@
 <?php 
 session_start();
 include 'View/parte_superior.php';
-/*if (isset($_SESSION['id_admin'])) {
-    include 'Model/conexion.php'; 
-    $sentencia="SELECT COUNT(idcliente)FROM cliente";
-    $resultado = $conexion->prepare($sentencia);
-    $resultado->execute(array());
-    $cantidadC=$resultado->fetchColumn();
 
-    $sentencia="SELECT COUNT(idreserva)FROM reserva";
-    $resultado = $conexion->prepare($sentencia);
-    $resultado->execute(array());
-    $cantidadR=$resultado->fetchColumn();
-
-    $sentencia="SELECT COUNT(idhabitacion)FROM habitacion";
-    $resultado = $conexion->prepare($sentencia);
-    $resultado->execute(array());
-    $cantidadH=$resultado->fetchColumn();
-
-}else{
-      echo "ERROR EN EL SISTEMA";
-}*/
 
 if (!isset($_SESSION['id_admin'])) {
     header('Location: login.php');
