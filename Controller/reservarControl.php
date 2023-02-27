@@ -44,7 +44,7 @@
       
 
         $sentenciaRF = $bd->prepare($rangofecha);
-        $sentenciaRF->execute(array($fecha_ingreso));
+        $sentenciaRF->execute(array());
         $resultadoRF = $sentenciaRF->fetchColumn();
         
             if(($resultadoRF) > 0)
@@ -55,7 +55,7 @@
                echo "<script type=''>alert('Fecha Disponible.');</script>";
             }   
     
-        echo  $resultadoRF;
+       
 
 /*
         $buscoFechaIngreso =   "SELECT fecha_ingreso FROM reserva
