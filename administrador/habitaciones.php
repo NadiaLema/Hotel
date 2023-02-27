@@ -87,7 +87,7 @@ if (!isset($_SESSION['id_admin'])) {
                     <br />
                     
                     <label for="apellidos">Ingrese Precio</label>
-                    <input type="text" name="precio" id="precio" class="form-control">
+                    <input type="text" name="precio" id="precio" maxlength="7" class="form-control">
                     <br />
 
                     <label for="apellidos">Ingrese Cantidad</label>

@@ -95,7 +95,7 @@ $(document).ready(function(){
                     swal("Error!", "Solo se permiten numeros naturales y/o decimales", "error");
                     $('#precio').focus();
                     return false;
-                }else if (cantidad.trim() == ''){
+                }else if (cantidad.trim() == 0){
                     swal("Error!", "Por favor ingrese Cantidad !", "error");
                 $("#cantidad").focus();
                 return false;
