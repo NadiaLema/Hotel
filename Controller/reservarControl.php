@@ -21,26 +21,29 @@
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
 
-        $buscoFechaIngreso =   "SELECT * FROM reserva
-        WHERE habitacion_idhabitacion  AND 
-        ('$fecha_ingreso' BETWEEN fecha_ingreso AND fecha_salida)
+        $rangofecha =   ("SELECT fecha_ingreso, fecha_salida, habitacion_idhabitacion FROM reserva
+        WHERE (habitacion_idhabitacion = '$idhabitacion') AND 
+        (('$fecha_ingreso' BETWEEN fecha_ingreso AND date_sub(fecha_salida, interval +1 day))
         OR 
-        ('$fecha_salida' BETWEEN fecha_ingreso AND fecha_salida)
+        ('$fecha_salida' BETWEEN date_sub(fecha_ingreso,interval -1 day) AND fecha_salida)
         OR
-        (fecha_ingreso <= '$fecha_ingreso' AND fecha_salida >= '$fecha_salida')";
+        (fecha_ingreso <= '$fecha_ingreso' AND fecha_salida >= '$fecha_salida')
+        OR
+        (fecha_ingreso >= '$fecha_ingreso' AND fecha_salida <='$fecha_salida'))");
       
-        $sentenciaFI = $bd->prepare($buscoFechaIngreso);
+
+        $sentenciaF = $bd->prepare($buscoFechaIngreso);
         $sentenciaFI->execute(array($fecha_ingreso));
         $resultadoFI = $sentenciaFI->fetchColumn();
-        if ($resultadoFI){
-            if($resultadoFI > 0)
+        
+            if(($resultadoFI) > 0)
             {
                echo '<div id="Error"></div>';
-               echo "<script type=''>alert('Ya existe una fecha agregada $fecha_ingreso para el municipio de $idhabitacion');</script>";
+               echo "<script type=''>alert('Fecha no esta disponible. Por favor elija otra.');</script>";
              }else{
                echo "";
             }   
-        }
+    
         echo  $resultadoFI;
 
 /*
