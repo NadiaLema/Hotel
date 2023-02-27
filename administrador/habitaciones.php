@@ -91,7 +91,7 @@ if (!isset($_SESSION['id_admin'])) {
                     <br />
 
                     <label for="apellidos">Ingrese Cantidad</label>
-                    <input type="number" name="cantidad" id="cantidad" class="form-control">
+                    <input type="number" onKeyPress="if(this.value.length==3) return false;"   name="cantidad" id="cantidad" class="form-control">
                     <br />
 
 
