@@ -20,7 +20,18 @@
         $dirreccion = $_POST['dirreccion'];
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
+    
+        /*
+        $validar ="select fecha_ingreso,fecha_salida,cantidad from reserva where"  
+      if (($fecha_ingreso===$fecha_ingreso and $fecha_salida===$fecha_salida)=>$cantidad){
+        echo "<script type=''>alert('Fecha no esta disponible. Por favor elija otra.');</script>";
+    
+      }else{
+        echo "<script type=''>alert('Fecha disponible');</script>";
+      }
+    */
 
+       //rango de fechas que para cada tipo dehabitación no permita elegir la misma fecha 
         $rangofecha =   ("SELECT fecha_ingreso, fecha_salida, habitacion_idhabitacion FROM reserva
         WHERE (habitacion_idhabitacion = '$idhabitacion') AND 
         (('$fecha_ingreso' BETWEEN fecha_ingreso AND date_sub(fecha_salida, interval +1 day))
@@ -32,19 +43,19 @@
         (fecha_ingreso >= '$fecha_ingreso' AND fecha_salida <='$fecha_salida'))");
       
 
-        $sentenciaF = $bd->prepare($buscoFechaIngreso);
-        $sentenciaFI->execute(array($fecha_ingreso));
-        $resultadoFI = $sentenciaFI->fetchColumn();
+        $sentenciaRF = $bd->prepare($rangofecha);
+        $sentenciaRF->execute(array($fecha_ingreso));
+        $resultadoRF = $sentenciaRF->fetchColumn();
         
-            if(($resultadoFI) > 0)
+            if(($resultadoRF) > 0)
             {
                echo '<div id="Error"></div>';
-               echo "<script type=''>alert('Fecha no esta disponible. Por favor elija otra.');</script>";
+               echo "<script type=''>alert('Fecha no disponible. Por favor elija otra.');</script>";
              }else{
-               echo "";
+               echo "<script type=''>alert('Fecha Disponible.');</script>";
             }   
     
-        echo  $resultadoFI;
+        echo  $resultadoRF;
 
 /*
         $buscoFechaIngreso =   "SELECT fecha_ingreso FROM reserva
