@@ -70,7 +70,7 @@ $sqlite = new sqlite();
                     <td><?php echo $dato->fecha_salida ?></td>
                     <th><?php echo $dato->nombre_habitacion ?></th>
                     <th>
-                    <a href="reserva.php?idBorrar=<?php echo $dato->idreserva;?>"  class="cancelar btn-danger btn-sm cancelar">Cancelar</a>
+                    <a href="reserva.php?idBorrar=<?php echo $dato->idreserva;?>"  class="btn-danger btn-sm cancelar">Cancelar</a>
                     
                   
                     </th>

@@ -53,8 +53,8 @@
                //$mensaje = "<script>document.getElementById('e_cantidad').innerHTML='Ingrese fecha.';</script>";
                return false;
              }else{
-               echo "<script type=''>alert('Fecha Disponible.');</script>";
-               return true;
+              // echo "<script type=''>alert('Fecha Disponible.');</script>";
+               
             }   
     
        
