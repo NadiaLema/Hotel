@@ -4,6 +4,7 @@ $(document).ready(function () {
         var res=confirm("Realmente desea borrar el registro?");
         if(res==true){
             location.href=$(this).attr("href");
+
         }
     });
 });

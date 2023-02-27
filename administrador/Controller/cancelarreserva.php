@@ -1,10 +1,6 @@
 <?php
 include 'Model/conexion.php';
-/*
-$id = ($_GET['id']);
-$sql = 
-
-*/
+$mensaje= null;
 
 $sentecia = null;
 class sqlite {
