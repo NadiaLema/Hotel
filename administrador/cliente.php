@@ -22,26 +22,17 @@ if (!isset($_SESSION['id_admin'])) {
 
 
 
-<?php 
-/*
- include "./View/parte_superior.php";
- include "Model/conexion.php";
 
- $sentencia = $conexion->query("SELECT * FROM cliente");
- $cliente = $sentencia->fetchAll(PDO::FETCH_OBJ);
- */
-?>
 <!-- Page content-->
     <div class="container-fluid">
        <h3 class="text-center">Clientes</h3>
        
 
 
-        <div class="table-responsive">
-            <table id="datos_cliente" class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                    <tr>
+            <div class="table-responsive">
+            <table id="" class="table table-bordered" style="width:30%">
+                <thead class="table-primary">
+                    
                     <th>#id</th>
                     <th>Nombre y Apellido</th>
                     <th>Dirección</th>
@@ -73,7 +64,7 @@ if (!isset($_SESSION['id_admin'])) {
 
 
             </table>
-        </div>
+            </div>
        
     
 
