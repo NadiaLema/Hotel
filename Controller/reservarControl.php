@@ -49,10 +49,12 @@
         
             if(($resultadoRF) > 0)
             {
-               echo '<div id="Error"></div>';
                echo "<script type=''>alert('Fecha no disponible. Por favor elija otra.');</script>";
+               //$mensaje = "<script>document.getElementById('e_cantidad').innerHTML='Ingrese fecha.';</script>";
+               return false;
              }else{
                echo "<script type=''>alert('Fecha Disponible.');</script>";
+               return true;
             }   
     
        
@@ -83,7 +85,7 @@
 
         }else if ($fecha_salida < $fecha_ingreso) {
             $mensaje = "<script>document.getElementById('e_salida').innerHTML='La fecha de salida debe ser mayor a la fecha de ingreso.';</script>";
-
+        
         }else  if ($nombre == "") {
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
 
