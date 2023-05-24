@@ -7,6 +7,7 @@
     $idreserva = null;
     $resultadoF = null;
     $suma = null;
+    $stmt = null; 
 
     if (isset($_POST["ajax"])) {
 
@@ -20,8 +21,18 @@
         $dirreccion = $_POST['dirreccion'];
         $provincia = $_POST['provincia'];
         $pais = $_POST['pais'];
-    
         /*
+        $query = $bd->prepare("select count(*) from reserva where fecha_ingreso = '?'");
+        $stmt->execute($query);
+        $resul= $stmt-> fetchColumn();
+        if($resul>0 ){
+            echo"la fecha {$fecha_ingreso} ya existe";
+        }
+        
+        //contar cuantas fechas de entrada hay por cada habitacion
+        count = current($bd->query("select count(fecha_ingreso) from reserva where habitacion_idhabitacion= '$idhabitacion' group by '1' having count(fecha_ingreso) ")->fetch());
+        echo $count;
+        
         $validar ="select fecha_ingreso,fecha_salida,cantidad from reserva where"  
       if (($fecha_ingreso===$fecha_ingreso and $fecha_salida===$fecha_salida)=>$cantidad){
         echo "<script type=''>alert('Fecha no esta disponible. Por favor elija otra.');</script>";
@@ -29,8 +40,8 @@
       }else{
         echo "<script type=''>alert('Fecha disponible');</script>";
       }
-    */
-
+    
+*/
        //rango de fechas que para cada tipo dehabitación no permita elegir la misma fecha 
         $rangofecha =   ("SELECT fecha_ingreso, fecha_salida, habitacion_idhabitacion FROM reserva
         WHERE (habitacion_idhabitacion = '$idhabitacion') AND 
@@ -41,25 +52,25 @@
         (fecha_ingreso <= '$fecha_ingreso' AND fecha_salida >= '$fecha_salida')
         OR
         (fecha_ingreso >= '$fecha_ingreso' AND fecha_salida <='$fecha_salida'))");
-      
-
         $sentenciaRF = $bd->prepare($rangofecha);
-        $sentenciaRF->execute(array());
+        $sentenciaRF->execute();
         $resultadoRF = $sentenciaRF->fetchColumn();
-        
-            if(($resultadoRF) > 0)
+
+   if($resultadoRF > 0 )
             {
                echo "<script type=''>alert('Fecha no disponible. Por favor elija otra.');</script>";
                //$mensaje = "<script>document.getElementById('e_cantidad').innerHTML='Ingrese fecha.';</script>";
                return false;
              }else{
               // echo "<script type=''>alert('Fecha Disponible.');</script>";
-               
+               echo "<script type=''>alert('Fecha Disponible');</script>";
+              
             }   
+            
     
-       
+       /*
+ 
 
-/*
         $buscoFechaIngreso =   "SELECT fecha_ingreso FROM reserva
         WHERE fecha_ingreso = '$fecha_ingreso' and habitacion_idhabitacion =  '$idhabitacion'";
         $sentenciaFI = $bd->prepare($buscoFechaIngreso);
@@ -85,9 +96,9 @@
 
         }else if ($fecha_salida < $fecha_ingreso) {
             $mensaje = "<script>document.getElementById('e_salida').innerHTML='La fecha de salida debe ser mayor a la fecha de ingreso.';</script>";
-        
-        }else  if ($nombre == "") {
-            $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
+      
+        } else  if ($nombre == "") {
+            $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombree.';</script>"; 
 
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";

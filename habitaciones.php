@@ -10,10 +10,10 @@
 <main  class="d-flex align-items-stretch">
 
     
-    <div class="container mt-5 mb-5">
-    <div class="row ">
-        <div class="col-sm-8 col-md-8 col-lg-8 ">
-            <div class=" bg-white rounded-lg shadow  d-lg-flex¨"  >
+    <div class="container   mt-5 mb-5 ">
+    <div class="row align-items-center">
+        <div class=" align-items-center col-8 mx-auto ">
+            <div class=" bg-white rounded-lg shadow d-lg-flex¨"  >
                 <?php
 
                 foreach ($habitacion as $dato) {
@@ -23,9 +23,9 @@
                 <!--imagen de habitación-->
                 <div class="" >
                     
-                  <!--<img class="rounded mx-auto d-block w-50 h-50 "  src="data:image/jpg;base64,<?php echo base64_encode($dato->img);?>">-->
+                 
                    <?php 
-                   echo'<img src="./administrador/img/'.$dato->imagen.'"   class="rounded mx-auto d-block w-50 h-50 " >';
+                   echo'<img src="./administrador/img/'.$dato->imagen.'"   class="rounded mx-auto d-block   w-50 h-50 " >';
                    ?>
                    
                 </div>
@@ -62,24 +62,18 @@
        
                     </div>
 
-                   
+                    
+                   <a href="resevar.php?idhabitacion=<?php echo $idhabitacion ?>"><input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input></a> 
+        
                 </div>
                 <?php
 
                 }
                 ?>
             </div>
-            
-        </div>
-         <!--formulario de horarios-->
-         <div class="col-md-4 order-md-2 mb-4">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-muted">Días de Estancia</span>
-        </h4>
-         
-           <a href="resevar.php?idhabitacion=<?php echo $idhabitacion ?>"><input type="button" id="btn_ajax" class="btn btn-primary btn-lg btn-block col-sm-10 mt-4" value="Reservar"></input></a> 
         
-    </div>
+       
+    
     </div>
     
 

@@ -54,7 +54,7 @@
             <h4 class="mb-3">DATOS PERSONALES</h4>
             <div id="mensaje"></div>
             <form action="" id="form_ajax" method="post">
-             <div class="row bg-light bg-gradient ">
+             <div class="row bg-light bg-gradient shadow ">
              <!--error de candidad S-->   
              <div style="font-size: 12px;" id="e_cantidad" class="text-danger"></div>
                 <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
@@ -75,7 +75,7 @@
                     -->                
                 </div>
                                       
-                <div class="row">
+                <div class="row bg-light bg-gradient shadow ">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Nombre y Apellido</label>
                         <input type="text" class="form-control" name="nombre" value="" required>
@@ -87,26 +87,26 @@
                         <div style="font-size: 12px;" id="e_telefono" class="text-danger"></div>
                     </div>
                 </div>
-
-                <div class="mb-3">
+              <div class="row bg-light bg-gradient shadow">
+                <div class="mb-3 ">
                     <label for="email">Email</span></label>
                     <input type="email" class="form-control" name="email">
                     <div style="font-size: 12px;" id="e_email" class="text-danger"></div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3  ">
                     <label for="direccion">Dirección</label>
                     <input type="text" class="form-control" name="dirreccion" required>
                     <div style="font-size: 12px;" id="e_direccion" class="text-danger"></div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3  ">
                     <label for="provincia">Provincia</label>
                     <input type="text" class="form-control" name="provincia">
                     <div style="font-size: 12px;" id="e_provincia" class="text-danger"></div>
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3  ">
                     <label for="pais">Pais</label>
                     <select class="form-control" id="sel1" name="pais">
                     <option value="AF">Afganistán</option>
@@ -347,14 +347,17 @@
 
                     <div style="font-size: 12px;" id="e_pais" class="text-danger"></div>
                 </div>
-                <hr class="mb-2 mt-5">
+                <br>
+                <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" name="final" type="button"
+                    value="Finalizar Reserva"></input>
+
+                
                 <input type="hidden" name="idhabitacion" value="<?php echo $idhabitacion ?>">
                 <input type="hidden" name="nombre_habitacion" value="<?php echo $nombre_habitacion ?>">
                 <input type="hidden" name="ajax">
-                <input class="btn btn-primary btn-lg btn-block text-white" id="btn_ajax" name="final" type="button"
-                    value="Finalizar Reserva"></input>
-                </hr>
-
+                
+                
+                </div>
             </form>
         </div>
       
