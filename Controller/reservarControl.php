@@ -98,7 +98,7 @@
             $mensaje = "<script>document.getElementById('e_salida').innerHTML='La fecha de salida debe ser mayor a la fecha de ingreso.';</script>";
       
         } else  if ($nombre == "") {
-            $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombree.';</script>"; 
+            $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Por favor ingrese nombre.';</script>"; 
 
         }else if(!preg_match('/^[a-záéóóúàèìòùäëïöüñ\s]+$/i',$nombre)){
             $mensaje = "<script>document.getElementById('e_nombre').innerHTML='Solo se permiten letras!';</script>";
