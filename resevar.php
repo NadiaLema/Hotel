@@ -50,14 +50,22 @@
             </ul>
 
         </div>
+      <div>
+      
+      
+
+
+      </div> 
+
+
         <div class="col-md-8 order-md-1 mb-5">
-            <h4 class="mb-3">DATOS PERSONALES</h4>
+            <h4 class="mb-3">CONFIRMAR FECHA</h4>
             <div id="mensaje"></div>
             <form action="" id="form_ajax" method="post">
              <div class="row bg-light bg-gradient shadow ">
              <!--error de candidad S-->   
              <div style="font-size: 12px;" id="e_cantidad" class="text-danger"></div>
-                <h6 class="mt-2 text-black-50">CONFIRMAR FECHA</h6>
+                
                     <div class="col-md-6 mb-3">
                         <label>Fecha llegada</label>
                         <input type="date" class="form-control text-secondary" name="fecha_ingreso" min="<?= date('Y-m-d',strtotime(date('Y-m-d'))) ?>" >
@@ -68,13 +76,11 @@
                         <input type="date" class="form-control text-secondary" id="fecha_salida" name="fecha_salida"  min="<?= date('Y-m-d',strtotime(date('Y-m-d'))) ?>"  placeholder="Another input">
                         <div style="font-size: 12px;" id="e_salida" class="text-danger"></div>
                     </div>
-                    <!--
-                    <div class="mb-3">                   
-                    <input type="button" id="btn_ajaxF" class="btn btn-dark center-block col-sm-5 mt-2 mb-1" name="consultar" value="Consultar disponibilidad"></input>
-                    </div>   
-                    -->                
+                    
                 </div>
-                                      
+                  <br>
+                  <h4 class="mb-3">DATOS PERSONALES</h4>
+                  <br>                    
                 <div class="row bg-light bg-gradient shadow ">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">Nombre y Apellido</label>
@@ -108,7 +114,8 @@
 
                 <div class="mb-3  ">
                     <label for="pais">Pais</label>
-                    <select class="form-control" id="sel1" name="pais">
+                    <select class="form-control" id="sel1" name="pais" placeholder="seleccione un pais"> 
+                    <option value=""  placeholder="seleccione un pais">Seleccionar</option>
                     <option value="AF">Afganistán</option>
                     <option value="AL">Albania</option>
                     <option value="DE">Alemania</option>
@@ -173,7 +180,7 @@
                     <option value="AE">Emiratos Árabes Unidos</option>
                     <option value="ER">Eritrea</option>
                     <option value="SI">Eslovenia</option>
-                    <option value="ES" selected>España</option>
+                    <option value="ES" >España</option>
                     <option value="US">Estados Unidos</option>
                     <option value="EE">Estonia</option>
                     <option value="ET">Etiopía</option>
@@ -391,4 +398,4 @@
         });
         </script>
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
